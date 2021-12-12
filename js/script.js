@@ -1,6 +1,4 @@
-$('body').css("max-width", $(window).width()+"px");
 
-$('.banner-section .banner-image .img-carou').css("width", $(window).width()-300+"px");
 
 
 var scrollWindow = function () {
@@ -52,4 +50,7 @@ function showBanner() {
 }
 
 showBanner();
-$('#carou-inner-banner img.img-banner').css("width", ($(window).width() - 300) / 3 + "px");
+
+$('body').css("max-width", $(window).width() + "px");
+$('.banner-section .banner-image .img-carou').css("width", $(window).width() - 300 + "px");
+$('#carou-inner-banner img.img-banner').css("height", ($(window).width() - 300) / 3 + "px");
