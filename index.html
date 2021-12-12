@@ -7,13 +7,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500&amp;display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <title>Job</title>
 </head>
 
 <body>
+
+    <!-- LOADER -->
+    <div id="loader-wrapper">
+        <div id="loader">Waiting...</div>
+    </div>
+
     <div class="container-fluid">
         <header>
             <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
@@ -73,15 +81,80 @@
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"><i
+                                    class="fas fa-chevron-left"></i></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                             data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></i></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"><i
+                                    class="fas fa-chevron-right"></i></i></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+                </div>
+            </section>
+
+            <section class="hotpost-section">
+                <h4>Bài viết nổi bật</h4>
+                <div class="post-container testimonials">
+                    <!-- TESTIMONIALS -->
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="customers-testimonials" class="owl-carousel">
+
+                                    <!--TESTIMONIAL 1 -->
+                                    <div class="item">
+                                        <div class="shadow-effect">
+                                            <img class="img-circle"
+                                                src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg"
+                                                alt="">
+                                            <p>Dramatically maintain clicks-and-mortar solutions without functional
+                                                solutions.
+                                                Completely synergize resource taxing relationships via premier niche
+                                                markets.
+                                                Professionally cultivate.</p>
+                                        </div>
+                                        <div class="testimonial-name">EMILIANO AQUILANI</div>
+                                    </div>
+                                    <!--END OF TESTIMONIAL 1 -->
+                                    <!--TESTIMONIAL 2 -->
+                                    <div class="item">
+                                        <div class="shadow-effect">
+                                            <img class="img-circle"
+                                                src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg"
+                                                alt="">
+                                            <p>Dramatically maintain clicks-and-mortar solutions without functional
+                                                solutions.
+                                                Completely synergize resource taxing relationships via premier niche
+                                                markets.
+                                                Professionally cultivate.</p>
+                                        </div>
+                                        <div class="testimonial-name">ANNA ITURBE</div>
+                                    </div>
+                                    <!--END OF TESTIMONIAL 2 -->
+                                    <!--TESTIMONIAL 3 -->
+                                    <div class="item">
+                                        <div class="shadow-effect">
+                                            <img class="img-circle"
+                                                src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg"
+                                                alt="">
+                                            <p>Dramatically maintain clicks-and-mortar solutions without functional
+                                                solutions.
+                                                Completely synergize resource taxing relationships via premier niche
+                                                markets.
+                                                Professionally cultivate.</p>
+                                        </div>
+                                        <div class="testimonial-name">LARA ATKINSON</div>
+                                    </div>
+                                    <!--END OF TESTIMONIAL 3 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END OF TESTIMONIALS -->
                 </div>
             </section>
         </main>
@@ -90,7 +163,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="data/json/banner-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="data/data_js/banner-data.js"></script>
     <script src="js/script.js"></script>
 
 
