@@ -1,3 +1,8 @@
+$('body').css("max-width", $(window).width()+"px");
+
+$('.banner-section .banner-image .img-carou').css("width", $(window).width()-300+"px");
+
+
 var scrollWindow = function () {
     $(window).scroll(function () {
         var $w = $(this),
@@ -36,4 +41,15 @@ var scrollWindow = function () {
     });
 };
 scrollWindow();
-$('body').addClass('loaded');
+
+
+function showBanner() {
+    for (let i = 0; i < bannerList.length; i++) {
+        $('#carou-inner-banner').append(`<div class="carousel-item${i==0?" active":""}"><img src="${bannerList[i].image}" class="d-block w-100 img-banner"></div>`);
+        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" ${i == 0 ? " class=\"active\"" : ""}" aria-current="true" aria-label="Slide ${i+1}"></button>`)
+    }
+    
+}
+
+showBanner();
+$('#carou-inner-banner img.img-banner').css("width", ($(window).width() - 300) / 3 + "px");
