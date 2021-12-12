@@ -25,6 +25,12 @@ body {
     border-radius: 0px 0px 8px 8px;
 }
 
+.my-navbar-light.scrolled.sleep {
+    -webkit-transition: .3s all ease-out;
+    -o-transition: .3s all ease-out;
+    transition: .3s all ease-out;
+}
+
 .my-navbar-light.scrolled {
     position: fixed;
     right: 0;
