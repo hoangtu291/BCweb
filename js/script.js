@@ -36,5 +36,4 @@ var scrollWindow = function () {
     });
 };
 scrollWindow();
-
-$('.awake').css('position', 'fixed');
+$('body').addClass('loaded');
