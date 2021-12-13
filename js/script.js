@@ -44,7 +44,7 @@ scrollWindow();
 function showBanner() {
     for (let i = 0; i < bannerList.length; i++) {
         $('#carou-inner-banner').append(`<div class="carousel-item${i==0?" active":""}"><img src="${bannerList[i].image}" class="d-block w-100 img-banner"></div>`);
-        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" ${i == 0 ? " class=\"active\"" : ""}" aria-current="true" aria-label="Slide ${i+1}"></button>`)
+        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="btn-circle ${i == 0 ? " active" : ""}" aria-current="true" aria-label="Slide ${i+1}"></button>`)
     }
     
 }
@@ -62,24 +62,24 @@ $('#carou-inner-banner img.img-banner').css("height", ($(window).width() - 300) 
 
 $('#customers-testimonials').owlCarousel({
     loop: true,
-    center: true,
-    items: 3,
-    margin: 0,
+    center: false,
+    items: 7,
+    margin: 5,
     autoplay: true,
     dots: false,
     autoplayTimeout: 4000,
     smartSpeed: 300,
     responsive: {
-        0: {
-            items: 1
+        912: {
+            items: 4.5
         },
-        768: {
-            items: 2
+        1300: {
+            items: 5
         },
-        1170: {
-            items: 3
+        1500: {
+            items: 6
         }
     }
 });
 
-setTimeout(function () { $('body').addClass('loaded'); }, 1500);
+setTimeout(function () { $('body').addClass('loaded'); }, 300);
