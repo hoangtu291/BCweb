@@ -51,10 +51,19 @@ function showBanner() {
 
 showBanner();
 
-$('body').css("max-width", $(window).width() + "px");
-$('.banner-section .banner-image .img-carou').css("width", $(window).width() - 300 + "px");
-$('#carou-inner-banner img.img-banner').css("height", ($(window).width() - 300) / 3 + "px");
 
+// SET BANNER SIZE
+function setBannerSize() {
+    var screenWidth = $(window).width();
+    if (screenWidth>1519){
+        screenWidth = 1519;
+    }
+    $('body').css("max-width", screenWidth + "px");
+    $('.banner-section .banner-image .img-carou').css("width", screenWidth - 300 + "px");
+    $('#carou-inner-banner img.img-banner').css("height", (screenWidth - 300) / 3 + "px");   
+}
+
+setBannerSize();
 
 
 
@@ -83,6 +92,8 @@ $('#customers-testimonials').owlCarousel({
 });
 
 
+// ANIMATE
+
 var contentWayPoint = function () {
     var i = 0;
     $('.ftco-animate').waypoint(function (direction) {
@@ -108,11 +119,14 @@ var contentWayPoint = function () {
 };
 contentWayPoint();
 
-// $('.post-item').mouseenter(function () {
-//     $('.nav-logo').css('transform', 'scale(1.1)');
-// });
-// $('.post-item').mouseleave(function () {
-//     $('.nav-logo').css('transform', 'scale(1)');
-// });
+// SHOW ICON SAVE
 
+$('.post-item').mouseenter(function () {
+    $(this).children('.item-post-footer').addClass('icon-save-show');
+});
+$('.post-item').mouseleave(function () {
+    $(this).children('.item-post-footer').removeClass('icon-save-show');
+});
+
+// LOADED
 setTimeout(function () { $('body').addClass('loaded'); }, 300);
