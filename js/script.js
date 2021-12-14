@@ -53,17 +53,17 @@ showBanner();
 
 
 // SET BANNER SIZE
-function setBannerSize() {
-    var screenWidth = $(window).width();
-    if (screenWidth>1519){
-        screenWidth = 1519;
-    }
-    $('body').css("max-width", screenWidth + "px");
-    $('.banner-section .banner-image .img-carou').css("width", screenWidth - 300 + "px");
-    $('#carou-inner-banner img.img-banner').css("height", (screenWidth - 300) / 3 + "px");   
-}
+// function setBannerSize() {
+//     var screenWidth = $(window).width();
+//     if (screenWidth>1519){
+//         screenWidth = 1519;
+//     }
+//     $('body').css("max-width", screenWidth + "px");
+//     $('.banner-section .banner-image .img-carou').css("width", screenWidth - 300 + "px");
+//     $('#carou-inner-banner img.img-banner').css("height", (screenWidth - 300) / 3 + "px");   
+// }
 
-setBannerSize();
+// setBannerSize();
 
 
 
@@ -72,17 +72,23 @@ setBannerSize();
 $('#customers-testimonials').owlCarousel({
     loop: true,
     center: false,
-    items: 7,
+    items: 6,
     margin: 5,
     autoplay: true,
     dots: false,
     autoplayTimeout: 4000,
     smartSpeed: 300,
     responsive: {
-        912: {
+        500: {
+            items: 1
+        },
+        992: {
+            items: 4
+        },
+        1180: {
             items: 4.5
         },
-        1300: {
+        1250: {
             items: 5
         },
         1500: {

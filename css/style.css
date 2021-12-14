@@ -26,6 +26,27 @@ h1 span {
     padding: 0 3px;
 }
 
+i {
+    margin-right: 10px;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 5px 0px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFC800;
+}
 
 button {
     outline: 0px;
@@ -96,6 +117,17 @@ button {
     background-image: url('../data/icon/netflix-icon.svg');
 }
 
+.text-section {
+    font-size: 50px;
+    color: #0c2d50;
+    opacity: .7;
+    font-weight: bold;
+}
+
+.content-sect {
+    opacity: .8;
+}
+
 .name-user {
     font-weight: 700;
     font-size: 15px;
@@ -145,7 +177,7 @@ button {
     height: 36px;
     background-color: #fff;
     cursor: pointer;
-    border: 2px solid rgba(0, 0, 0, 0.22);
+    /* border: 2px solid rgba(0, 0, 0, 0.22); */
     opacity: .9;
 }
 
@@ -368,7 +400,7 @@ button {
     padding: 5px 10px;
 }
 
-.nav-logo {
+.logo {
     width: 30px;
     height: 30px;
     background-color: grey;
@@ -412,7 +444,6 @@ button {
 }
 
 .background-blur {
-    /* position: fixed; */
     z-index: -100;
     top: 20px;
     width: 100%;
@@ -493,8 +524,7 @@ button {
     position: relative;
     width: 100%;
     height: 500px;
-    /* background-color: red; */
-    margin: 0px auto;
+    /* background-color: #fff; */
 }
 
 #banner-section .banner-image {
@@ -505,32 +535,15 @@ button {
 }
 
 #banner-section .banner-image .img-carou {
+    width: 1200px;
+    height: 400px;
+    min-width: 1024px;
     cursor: pointer;
 }
 
 #banner-section .banner-image img {
     border-radius: 10px;
-    border: 2px solid #0c2d50;
-    /* height: 400px; */
-}
-
-.carousel-control-prev {
-    left: -130px;
-
-}
-
-.carousel-control-next {
-    right: -130px;
-
-}
-
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    background-image: none;
-}
-
-.carousel-control-prev-icon i, .carousel-control-next-icon i {
-    color: #0c2d50;
-    font-size: 32px;
+    height: 400px;
 }
 
 #banner-section .banner-image .carousel-indicators {
@@ -538,10 +551,10 @@ button {
 }
 
 #banner-section .banner-image .carousel-indicators button {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin: 0px 10px;
-    background-color: #0c2d50;
+    background-color: #000000;
 }
 
 #banner-section .banner-image .carousel-indicators button.active {
@@ -556,7 +569,8 @@ button {
     justify-content: center;
     width: 100%;
     height: 600px;
-    background-color: rgb(248, 248, 248);
+    margin: 60px 0px 30px 0px;
+    background-color: #f8f8f8;
 }
 
 #introduce-section .main-introduce {
@@ -750,13 +764,30 @@ button {
 }
 
 /* FOOTER */
-#footer-section{
+#footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
     width: 100%;
-    height: 200px;
-    /* background-color: palevioletred; */
-    background-image: url('../data/images/footer-bg.png');
+    height: 350px;
+    background-color: #f8f8f8;
+    /* background-image: url('../data/images/footer-bg.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+#footer-section .footer-container {
+    width: 1200px;
+    min-width: 1024px;
+    /* background-color: red; */
+}
+
+#footer-section .contact-us .text {
+    position: relative;
+    margin-left: -28px;
+    left: 40px;
+}
 
 /* animate */
 .ftco-animate {
