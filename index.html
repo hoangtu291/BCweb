@@ -33,23 +33,24 @@
                 <div class="main-nav">
                     <div class="nav-left">
                         <div class="nav-logo logo btn-circle" id="logo-brand"></div>
-                        <a class="navbar-brand" href="index.html">Logo</a>
+                        <a class="navbar-brand" href="index.html">Name <span>web</span></a>
                     </div>
-                    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
-                        aria-controls="ftco-nav">
-                        <span class="navbar-toggler-icon">Menu</span>
-                    </button> -->
 
-                    <!-- <div class="collapse navbar-collapse" id="ftco-nav"> -->
+                    <div class="collapse navbar-collapse" id="ftco-nav">
                         <div class="navbar-nav ml-auto nav-center">
                             <div class="nav-item active"><a href="index.html" class="nav-link">Home</a></div>
                             <div class="nav-item"><a href="#" class="nav-link">Jobs</a></div>
                             <div class="nav-item"><a href="#" class="nav-link">CreateCV</a></div>
+                            <div class="nav-right">
+                                <button class="btn-signin btn-blue">Sign in</button>
+                            </div>
                         </div>
-                    <!-- </div> -->
-
-                    <div class="nav-right">
-                        <button class="btn-signin btn-blue">Sign in</button>
+                    </div>
+                    <div class="btn-collapse">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#ftco-nav" aria-controls="ftco-nav">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -57,6 +58,8 @@
 
         <main>
             <section id="home-section">
+                <div class="background-blur">
+                </div>
                 <div class="container-home">
                     <div class="main-intro">
                         <h1>Lorem <span>Ipsum</span></h1>
@@ -67,20 +70,20 @@
                             <button class="btn-blue">Search</button>
                         </div>
                     </div>
-                    <div class="background-blur">
-                    </div>
+
 
                 </div>
             </section>
 
             <!-- BANNER -->
             <section id="banner-section">
-                <h2 class="text-section text-center">Được quan tâm</h2>
-                <p class="content-sect text-center">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp chữ
+                <h2 class="text-section text-center ftco-animate">Được quan tâm</h2>
+                <p class="content-sect text-center ftco-animate">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn
+                    và sắp chữ
                 </p>
-                <div class="banner-image">
+                <div class="banner-image ftco-animate">
                     <div id="carouselExampleIndicators" class="carousel slide img-carou" data-bs-ride="carousel">
-                        <div class="carousel-indicators" id="btn-carou-banner">
+                        <div class="carousel-indicators ftco-animate" id="btn-carou-banner">
 
                         </div>
                         <div class="carousel-inner" id="carou-inner-banner">
@@ -92,53 +95,61 @@
 
             <section id="introduce-section">
                 <div class="main-introduce">
-                    <div class="content-intro ftco-animate">
-                        <h1>Lorem <span>Ipsum</span></h1>
-                        <p>Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp chữ. Lorem Ipsum đã trở thành
-                            văn bản giả tiêu chuẩn của
-                            ngành kể từ những năm 1500, khi một nhà in không xác định lấy một dãy loại và xáo trộn nó để
-                            tạo thành một cuốn sách
-                            mẫu. Nó đã tồn tại không chỉ năm thế kỷ, mà còn là bước nhảy vọt trong lĩnh vực sắp chữ điện
-                            tử, về cơ bản vẫn không
-                            thay đổi.</p>
-                    </div>
-                    <div class="image-intro">
-                        <table>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="img-intro imgintro-1 img-large-hor ftco-animate">
-                                        <div class="image-logo-hor logo-disney"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="img-intro imgintro-2 ftco-animate">
-                                        <div class="image-logo logo-netflix"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-intro imgintro-3 ftco-animate">
-                                        <div class="image-logo logo-micros"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="img-intro imgintro-4 ftco-animate">
-                                        <div class="image-logo logo-git"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="img-intro imgintro-4 ftco-animate">
-                                        <div class="image-logo logo-ytbe"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="row">
+                        <div class="col-xl text-intro">
+                            <div class="content-intro ftco-animate">
+                                <h1>Lorem <span>Ipsum</span></h1>
+                                <p>Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp chữ. Lorem Ipsum đã
+                                    trở
+                                    thành
+                                    văn bản giả tiêu chuẩn của
+                                    ngành kể từ những năm 1500, khi một nhà in không xác định lấy một dãy loại và xáo
+                                    trộn
+                                    nó để
+                                    tạo thành một cuốn sách
+                                    mẫu.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl">
+                            <div class="image-intro">
+                                <table>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="img-intro imgintro-1 img-large-hor ftco-animate">
+                                                <div class="image-logo-hor logo-disney"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="img-intro imgintro-2 ftco-animate">
+                                                <div class="image-logo logo-netflix"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="img-intro imgintro-3 ftco-animate">
+                                                <div class="image-logo logo-micros"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="img-intro imgintro-4 ftco-animate">
+                                                <div class="image-logo logo-git"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="img-intro imgintro-4 ftco-animate">
+                                                <div class="image-logo logo-ytbe"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section id="hotpost-section">
-                <h2 class="text-section text-center">Bài viết nổi bật</h2>
+                <h2 class="text-section text-center ftco-animate">Bài viết nổi bật</h2>
                 <div class="post-container testimonials">
                     <!-- TESTIMONIALS -->
                     <!-- <div class="container"> -->
@@ -147,7 +158,7 @@
                         <div class="col-sm-12">
                             <div id="customers-testimonials" class="owl-carousel">
                                 <!--TESTIMONIAL  -->
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-gg"></div>
@@ -172,7 +183,7 @@
                                     </div>
                                 </div>
 
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-ytbe"></div>
@@ -197,7 +208,7 @@
                                     </div>
                                 </div>
 
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-git"></div>
@@ -222,7 +233,7 @@
                                     </div>
                                 </div>
 
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-beh"></div>
@@ -247,7 +258,7 @@
                                     </div>
                                 </div>
 
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-pint"></div>
@@ -272,7 +283,7 @@
                                     </div>
                                 </div>
 
-                                <div class="post-item-hot">
+                                <div class="post-item-hot ftco-animate">
                                     <div class="contain-item card-item">
                                         <div class="head-post">
                                             <div class="image-logo logo-micros"></div>
@@ -307,6 +318,7 @@
 
             <section id="listpost-section">
                 <div class="container-list-post">
+                    <h2 class="text-section text-center ftco-animate">Các công việc dành cho bạn</h2>
                     <div class="row">
                         <div class="col-md-6 col-lg-3 ftco-animate">
                             <div class="post-item card-item">
@@ -690,56 +702,71 @@
             <footer id="footer-section">
                 <div class="footer-container">
                     <div class="row">
-                        <div class="col-md">
+                        <div class="contain-footer col-md-3">
                             <div class="ftco-footer-widget mb-4">
-                                <h1 class="ftco-heading-2">Name <span>web</span></h1>
-                                <p>Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp chữ. Lorem Ipsum đã
+                                <h2 class="ftco-heading-2">Name <span>web</span></h2>
+                                <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
+                                    chữ. Lorem Ipsum đã
                                     trở thành văn bản giả tiêu chuẩn của
                                     ngành kể từ những năm 1500</p>
                             </div>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col-md-2">
                             <div class="ftco-footer-widget mb-4 ml-md-5">
                                 <h2 class="ftco-heading-2">Menu</h2>
-                                <ul class="list-unstyled ftco-animate">
+                                <ul class="list-unstyled ftco-animate text-footer">
                                     <li><a href="#">Home</a></li>
-                                    <li><a href="#"></a>Jobs</a></li>
-                                    <li><a href="#"></a>Create CV</a></li>
+                                    <li><a href="#">Jobs</a></li>
+                                    <li><a href="#">Create CV</a></li>
                                     <li><a href="#">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col-md-4">
                             <div class="contact-us">
                                 <h2>Contact Us</h2>
                                 <div class="list-contact ftco-animate">
                                     <ul>
                                         <li>
                                             <i class="fas fa-map-marker"></i>
-                                            <span class="text">203 Fake St. Mountain View, San<br>Francisco, California,
+                                            <span class="text-footer">203 Fake St. Mountain View, San Francisco,
+                                                California,
                                                 USA</span>
                                         </li>
-                                        <li><a href="#"><i class="fas fa-phone"></i><span class="text">+2 392 3929
+                                        <li><a href="#"><i class="fas fa-phone"></i><span class="text-footer">+2 392
+                                                    3929
                                                     210</span></a></li>
                                         <li><a href="#"><i class="fas fa-envelope"></i><span
-                                                    class="text">info@yourdomain.com</span></a></li>
+                                                    class="text-footer">info@yourdomain.com</span></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md">
+                        <div class="col-md-3">
                             <div class="feed-back">
                                 <h2 class="ftco-heading-2">Feedback</h2>
+                                <div class="input-feed">
+                                    <input type="text" class="ftco-animate">
+                                    <button class="btn-blue ftco-animate"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                                <div class="social-net">
+                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                                class="fab fa-facebook"></i></a></div>
+                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                                class="fab fa-instagram"></i></a></div>
+                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                                class="fab fa-twitter"></i></a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <p>
-                                Copyright © 2021 2021 Bản quyền thuộc về Nhóm 4
+                            <p class="copy-right">
+                                Copyright © 2021 2021 Bản quyền thuộc về nhóm 4
                             </p>
                         </div>
                     </div>

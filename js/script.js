@@ -43,10 +43,10 @@ scrollWindow();
 
 function showBanner() {
     for (let i = 0; i < bannerList.length; i++) {
-        $('#carou-inner-banner').append(`<div class="carousel-item${i==0?" active":""}"><img src="${bannerList[i].image}" class="d-block w-100 img-banner"></div>`);
-        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="btn-circle ${i == 0 ? " active" : ""}" aria-current="true" aria-label="Slide ${i+1}"></button>`)
+        $('#carou-inner-banner').append(`<div class="carousel-item${i == 0 ? " active" : ""}"><img src="${bannerList[i].image}" class="d-block w-100 img-banner"></div>`);
+        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="btn-circle ${i == 0 ? " active" : ""}" aria-current="true" aria-label="Slide ${i + 1}"></button>`)
     }
-    
+
 }
 
 showBanner();
@@ -79,14 +79,17 @@ $('#customers-testimonials').owlCarousel({
     autoplayTimeout: 4000,
     smartSpeed: 300,
     responsive: {
-        500: {
+        0: {
             items: 1
         },
-        992: {
-            items: 4
+        460: {
+            items: 2
         },
-        1180: {
-            items: 4.5
+        670: {
+            items: 3
+        },
+        880: {
+            items: 4
         },
         1250: {
             items: 5
@@ -132,6 +135,14 @@ $('.post-item').mouseenter(function () {
 });
 $('.post-item').mouseleave(function () {
     $(this).children('.item-post-footer').removeClass('icon-save-show');
+});
+
+function eventFunc() {
+    $('.post-item').click(redirectDetails());
+}
+
+$('.post-item, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function redirectDetails() {
+    window.location.href = "details.html";
 });
 
 // LOADED

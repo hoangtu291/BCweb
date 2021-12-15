@@ -15,19 +15,39 @@ body {
     max-width: 1519px;
 }
 
+body.error404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC800;
+    width: 100vw;
+    height: 100vh;
+}
+
+body.error404::after {
+    content: "Trang này chưa viết";
+    color: #0c2d50;
+    font-size: 80px;
+    font-family: 'Dancing Script', cursive;
+}
+
 h1 {
     font-size: 55px;
     font-weight: 600;
 }
 
-h1 span {
+h1 span, h2 span, h3 span, h4 span, h5 span, .navbar-brand span {
     color: #fff;
     background-color: #0c2d50;
     padding: 0 3px;
 }
 
-i {
+/* i {
     margin-right: 10px;
+} */
+
+.oi-menu:before {
+    content: '\e09b';
 }
 
 ul {
@@ -45,7 +65,7 @@ a {
 }
 
 a:hover {
-    color: #FFC800;
+    color: #213bbf;
 }
 
 button {
@@ -64,6 +84,7 @@ button {
 .btn-blue {
     background-color: #0c2d50;
     color: white;
+    padding: 0px 5px;
 }
 
 .btn-blue:hover {
@@ -78,10 +99,8 @@ button {
 }
 
 .image-logo-hor {
-    /* text-align: center; */
     width: 230px;
     background-repeat: no-repeat;
-    /* transform: scale(1.3); */
 }
 
 .image-logo-hor.logo-disney {
@@ -118,7 +137,7 @@ button {
 }
 
 .text-section {
-    font-size: 50px;
+    font-size: 40px;
     color: #0c2d50;
     opacity: .7;
     font-weight: bold;
@@ -128,14 +147,20 @@ button {
     opacity: .8;
 }
 
+.post-item {
+    height: 250px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
 .name-user {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .time-post {
     font-weight: 700;
-    font-size: 13px;
+    font-size: 10px;
     opacity: .4;
 }
 
@@ -150,7 +175,7 @@ button {
 .item-post-footer {
     display: flex;
     /* margin-top: -15px; */
-    margin-top: -5px;
+    margin-top: -25px;
     justify-content: center;
     width: 100%;
     /* background-color: red; */
@@ -165,7 +190,7 @@ button {
 .icon-save-show {
     visibility: visible;
     transition: .3s ease-in-out;
-    margin-top: -15px;
+    margin-top: -35px;
     opacity: 1;
 }
 
@@ -193,15 +218,16 @@ button {
 }
 
 .title-post-card {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
 }
 
 .image-post-card {
     width: 100%;
-    height: 100px;
+    height: 95px;
     /* background-color: red; */
     text-align: center;
+    margin-top: -6px;
 }
 
 .card-item {
@@ -210,6 +236,11 @@ button {
     border: 2px solid rgba(0, 0, 0, 0.22);
     box-sizing: border-box;
     padding: 0px 10px;
+}
+
+.card-item .end-date {
+    transform: scale(.7);
+    margin-left: -15px;
 }
 
 .end-date {
@@ -227,6 +258,49 @@ button {
     font-weight: 600;
 }
 
+.social-net {
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.social-net .logo-brand {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b9b9b980;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.social-net .logo-brand a {
+    margin-top: 2px;
+}
+
+.social-net .logo-brand a:hover {
+    color: #000;
+    font-size: 33px;
+    transition: .3s;
+}
+
+input[type='text'] {
+    box-sizing: border-box;
+    background-color: #ffffff80;
+    border-width: 3px;
+    border-style: solid;
+}
+
+input[type='text']:focus {
+    outline: 0;
+    box-shadow: 0px 0px 5px 0px #0c2d5075;
+    background-color: #ffffff;
+    transition: .3s;
+}
+
 /* LOADER */
 #loader-wrapper {
     position: fixed;
@@ -237,21 +311,6 @@ button {
     z-index: 2000;
     background-color: #0c2d50;
 }
-
-/* #loader {
-    display: block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    width: 150px;
-    height: 150px;
-    margin: -75px 0 0 -75px;
-    color: white;
-    animation: spin 2s linear infinite;
-    z-index: 2001;
-    opacity: 0;
-    ;
-} */
 
 #loader {
     display: block;
@@ -379,6 +438,7 @@ button {
 
 .my-navbar-light {
     z-index: 100;
+    height: 45px;
     background-color: transparent;
     /* background-color: #fff; */
 }
@@ -389,8 +449,7 @@ button {
 
 .main-nav {
     display: flex;
-    min-width: 1024px;
-    /* width: 90%; */
+    width: 1024px;
     align-items: center;
     font-size: 20px;
     margin: 0px auto;
@@ -413,21 +472,34 @@ button {
 }
 
 .nav-center {
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+
+.nav-center a {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0px 10px;
 }
 
 .nav-right {
     display: flex;
-    width: 200px;
+    width: fit-content;
     justify-content: flex-end;
 }
 
 .btn-signin {
-    width: 130px;
-    height: 35px;
-    border-radius: 10px;
+    width: 90px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.nav-item.active {
+    text-decoration: underline;
 }
 
 /* HOME */
@@ -444,6 +516,7 @@ button {
 }
 
 .background-blur {
+    position: absolute;
     z-index: -100;
     top: 20px;
     width: 100%;
@@ -478,27 +551,20 @@ button {
 
 /* search */
 .container-home .main-intro .search {
+    width: 750px;
     margin-top: 100px;
 }
 
 .container-home .main-intro #searchJob {
     width: 600px;
     height: 55px;
-    box-sizing: border-box;
     padding-left: 30px;
     font-size: 18px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: rgba(164, 163, 162, 0.38);
-    border-image: initial;
     border-radius: 10px;
 }
 
 .container-home .main-intro #searchJob:focus {
-    outline: 0;
     border: 3px solid rgba(193, 142, 91, .7);
-    box-shadow: 0px 0px 5px 0px #0c2d5075;
-    transition: .3s;
 }
 
 .container-home .main-intro button {
@@ -537,7 +603,6 @@ button {
 #banner-section .banner-image .img-carou {
     width: 1200px;
     height: 400px;
-    min-width: 1024px;
     cursor: pointer;
 }
 
@@ -577,21 +642,16 @@ button {
     display: flex;
     align-items: center;
     width: 1200px;
-    min-width: 900px;
     height: 400px;
 }
 
 #introduce-section .main-introduce .content-intro {
-    width: 60%;
     height: fit-content;
     /* background-color: pink; */
     padding: 0px 70px 0px 20px;
 }
 
 #introduce-section .main-introduce .image-intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 40%;
     height: 100%;
 }
@@ -608,16 +668,21 @@ button {
     box-shadow: 0px 0px 5px 0px #0c2d5030;
 }
 
+#introduce-section .main-introduce .text-intro {
+    display: flex;
+    align-items: center;
+}
+
 #introduce-section .main-introduce .img-intro.img-large-hor {
     width: 295px;
     padding: 10px;
 }
 
-/* HOT POST */
-.post-container {
-    min-width: 1024px;
+#introduce-section .main-introduce p {
+    line-height: 1.5;
 }
 
+/* HOT POST */
 #customers-testimonials .post-item-hot .contain-item {
     width: 250px;
     height: 450px;
@@ -737,25 +802,20 @@ button {
     width: 1024px;
 }
 
-.post-item {
-    height: 300px;
-    margin: 10px 0px;
-}
-
 .post-item:hover {
     transform: scale(1.01);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
     transition: .1s ease-in;
 }
 
-#listpost-section .post-item .avatar-user {
+.post-item .avatar-user {
     width: 25px;
     height: 25px;
     background-color: #aaa;
     margin-right: 5px;
 }
 
-#listpost-section .post-item .item-post-header {
+.post-item .item-post-header {
     display: flex;
     width: 100%;
     height: 30px;
@@ -770,23 +830,56 @@ button {
     justify-content: center;
     margin-top: 20px;
     width: 100%;
-    height: 350px;
-    background-color: #f8f8f8;
-    /* background-image: url('../data/images/footer-bg.png'); */
+    height: 270px;
+    background-color: #e2b100;
+    background-image: url('../data/images/footer-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #footer-section .footer-container {
     width: 1200px;
-    min-width: 1024px;
-    /* background-color: red; */
+    /* min-width: 1024px; */
+    padding: 10px;
 }
 
-#footer-section .contact-us .text {
+#footer-section .footer-container .contain-footer {
+    padding: 10px;
+}
+
+#footer-section .contact-us span {
     position: relative;
-    margin-left: -28px;
+    margin-left: -16px;
     left: 40px;
+}
+
+.copy-right {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.feed-back .input-feed {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.feed-back .input-feed input {
+    width: 220px;
+    height: 35px;
+    border-radius: 6px 0px 0px 6px;
+    border: 2px solid rgba(164, 163, 162, 0.38);
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.feed-back .input-feed button {
+    width: 50px;
+    height: 34px;
+    border-radius: 6px;
+    border: 2px solid rgba(164, 163, 162, 0.38);
+    font-size: 15px;
+    margin-left: -10px;
 }
 
 /* animate */
@@ -801,4 +894,328 @@ button {
     visibility: visible;
     opacity: 1;
     transition: .4s ease-in;
+}
+
+
+/* RESOPNSIVE */
+/* <= 1240 */
+@media screen and (max-width: 1239px) {
+    .container-home {
+        height: 600px;
+    }
+
+    /* HEADER */
+    .my-navbar-light {
+        height: 40px;
+    }
+
+    .logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav-center a {
+        font-size: 11px;
+    }
+
+    .btn-signin {
+        width: 70px;
+        font-size: 13px;
+    }
+
+    /* HOME */
+
+    .container-home .main-intro h1 {
+        font-size: 60px;
+    }
+
+    .container-home .main-intro p {
+        font-size: 25px;
+    }
+
+    .container-home .main-intro .search {
+        margin-top: 50px;
+    }
+
+    .container-home .main-intro #searchJob {
+        width: 400px;
+        height: 41px;
+        font-size: 15px;
+        border-width: 2px;
+        border-radius: 7px 0px 0px 7px;
+    }
+
+    .container-home .main-intro #searchJob:focus {
+        border: 2px solid rgba(193, 142, 91, .7);
+    }
+
+    .container-home .main-intro button {
+        width: 100px;
+        height: 41px;
+        font-size: 18px;
+        border-radius: 8px;
+        border-width: 2px;
+    }
+
+    .container-home .main-intro #searchJob::placeholder {
+        font-size: 15px;
+    }
+
+    /* INTRODUCE */
+    #introduce-section .main-introduce {
+        width: 1024px;
+    }
+
+    #introduce-section .main-introduce p {
+        line-height: 1.7;
+        font-size: 13px;
+    }
+
+    /* HOT POST */
+    #customers-testimonials .card-item {
+        border-width: 0px;
+    }
+
+    #customers-testimonials .post-item-hot .contain-item {
+        width: 220px;
+        height: 315px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    #customers-testimonials .post-item-hot .head-post {
+        margin-top: 10px;
+        width: 100%;
+        height: 50px;
+    }
+
+    .image-logo {
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: scale(.8);
+    }
+
+    #customers-testimonials .post-item-hot span {
+        font-weight: 500;
+    }
+
+    #customers-testimonials .post-item-hot .vacancies {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    #customers-testimonials .post-item-hot .detail-vac {
+        font-size: 13px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    #customers-testimonials .info-post .icon-post {
+        transform: scale(.7);
+    }
+
+    #customers-testimonials .info-post p {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    /* footer-post */
+
+    #customers-testimonials .post-item-hot .footer-post {
+        margin-top: 10px;
+    }
+
+    #customers-testimonials .post-item-hot .footer-post .btn-seeDetail {
+        width: 150px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    #customers-testimonials .post-item-hot .footer-post .btn-save {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /*#listpost-section {
+        display: none;
+    }*/
+
+    #footer-section .footer-container h2 {
+        font-size: 25px;
+    }
+
+    #footer-section .footer-container {
+        font-size: 13px;
+    }
+
+    .feed-back .input-feed input {
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .feed-back .input-feed button {
+        position: relative;
+        top: 1px;
+        height: 30px;
+        margin-left: -10px;
+    }
+}
+
+/* <= 1200 */
+@media screen and (max-width: 1199px) {
+
+    .container-home {
+        height: 500px;
+    }
+
+    #introduce-section .main-introduce .image-intro {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #introduce-section .main-introduce .image-intro {
+        transform: scale(.8);
+    }
+}
+
+/* <= 1180 */
+@media screen and (max-width: 1180px) {
+    .feed-back {
+        margin-left: 20px;
+    }
+
+    .feed-back .input-feed input {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .feed-back .input-feed button {
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+
+/* <= 1024 */
+@media screen and (max-width: 1024px) {
+
+    .container-home {
+        height: 450px;
+    }
+
+    .main-nav {
+        margin: 0px 10px;
+    }
+
+    .container-home .main-intro {
+        top: 200px;
+        left: 30px;
+    }
+
+    .container-home .main-intro h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .container-home .main-intro p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    #footer-section {
+        background-image: none;
+        background-color: #f9c922;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 744px) {
+
+    .background-blur {
+        display: none;
+    }
+
+    .container-home .main-intro {
+        top: 100px;
+        left: 30px;
+    }
+
+    .container-home .main-intro h1 {
+        font-size: 30px;
+    }
+
+    .container-home .main-intro span {
+        background-color: #0c2d50;
+        color: rgb(255, 255, 255);
+        padding: 2px;
+    }
+
+    .container-home .main-intro p {
+        font-size: 18px;
+    }
+
+    /* search */
+    .container-home .main-intro .search {
+        width: 400px;
+        /* background-color: #fff; */
+        margin-top: 30px;
+    }
+
+    .container-home .main-intro #searchJob {
+        width: 300px;
+        height: 35px;
+        padding-left: 30px;
+        font-size: 15px;
+        border-width: 2px;
+        border-radius: 8px;
+    }
+
+    .container-home .main-intro #searchJob:focus {
+        border-width: 2px;
+    }
+
+    .container-home .main-intro button {
+        transition: .3s;
+        top: 5px;
+        width: 300px;
+        height: 35px;
+        left: 0px;
+    }
+
+    .container-home .main-intro #searchJob::placeholder {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+    .container-home .main-intro {
+        top: 70px;
+        left: 30px;
+    }
+
+    .my-navbar-light {
+        height: fit-content;
+        background-color: white;
+    }
+
+    .nav-center {
+        text-align: right;
+    }
+
+    .nav-right {
+        width: 100%;
+    }
+
+    .btn-collapse {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0;
+    }
 }
