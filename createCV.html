@@ -18,6 +18,23 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <title>Job</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #footer-section {
+            margin-top: auto;
+        }
+    </style>
 </head>
 
 <body onload="showProfile()">
@@ -26,548 +43,562 @@
     <div id="loader-wrapper">
         <div id="loader"></div>
     </div>
+    <header>
+        <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
+            <div class="main-nav">
+                <div class="nav-left">
+                    <div class="nav-logo logo btn-circle" id="logo-brand"></div>
+                    <a class="navbar-brand" href="index.html">Name <span>web</span></a>
+                </div>
 
-    <div class="container-fluid">
-        <header>
-            <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
-                <div class="main-nav">
-                    <div class="nav-left">
-                        <div class="nav-logo logo btn-circle" id="logo-brand"></div>
-                        <a class="navbar-brand" href="index.html">Name <span>web</span></a>
-                    </div>
-        
-                    <div class="collapse navbar-collapse" id="ftco-nav">
-                        <div class="navbar-nav ml-auto nav-center">
-                            <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-                            <div class="nav-item"><a href="#" class="nav-link">Jobs</a></div>
-                            <div class="nav-item active"><a href="javascript:checkRedirectCV();" class="nav-link">CreateCV</a></div>
-                            <div class="nav-right">
-                                <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
-        
-                                <div class="dropdown d-none" id="nav-account">
-                                    <div class="dropbtn"><a href=""></a><i class="fas fa-user-circle"></i></div>
-                                    <div class="dropdown-content">
-                                        <ul>
-                                            <li>Tùy chọn 1</li>
-                                            <li>Tùy chọn 2</li>
-                                            <li onclick="logOut()">Đăng xuất</li>
-                                        </ul>
-                                        <!-- <a href="#"></a>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <div class="navbar-nav ml-auto nav-center">
+                        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                        <div class="nav-item"><a href="job.html" class="nav-link">Jobs</a></div>
+                        <div class="nav-item active"><a href="javascript:checkRedirectCV();"
+                                class="nav-link">CreateCV</a></div>
+                        <div class="nav-right">
+                            <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
+
+                            <div class="dropdown d-none" id="nav-account">
+                                <div class="dropbtn"><a href=""></a><i class="fas fa-user-circle"></i></div>
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li>Tùy chọn 1</li>
+                                        <li>Tùy chọn 2</li>
+                                        <li onclick="logOut()">Đăng xuất</li>
+                                    </ul>
+                                    <!-- <a href="#"></a>
                                                 <a href="#">Link 2</a>
                                                 <a href="#" onclick="logOut()"></a> -->
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="btn-collapse">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
-                            aria-controls="ftco-nav">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                    </div>
                 </div>
-            </nav>
-        </header>
-
-        <main>
-            <div class="header-cv bg-warning text-center">
-                header
+                <div class="btn-collapse">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+                        aria-controls="ftco-nav">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
             </div>
-            <div class="container dp-flex-juscenter">
-                <div class="container-1024">
+        </nav>
+    </header>
 
-                    <section class="row section-cv" id="profile-section">
-                        <div class="col-lg-3">
-                            <div class="img-profile">
-                                <img src="data/images/avatar-profile.jpg" alt="avatar-profile" width="170px">
-                            </div>
+    <main>
+        <div class="header-cv bg-warning text-center">
+            header
+        </div>
+        <div class="container dp-flex-juscenter">
+            <div class="container-1024">
+
+                <section class="row section-cv" id="profile-section">
+                    <div class="col-lg-3">
+                        <div class="img-profile">
+                            <img src="data/images/avatar-profile.jpg" alt="avatar-profile" width="170px">
                         </div>
-                        <div class="col-lg-9">
-                            <h2 id="profile-name"></h2>
-                            <div class="profile-edit icon-gray"><i class="fas fa-edit" data-bs-toggle="modal"
-                                    data-bs-target="#profileModal"></i></div>
-                            <p id="profile-birth">
-                                <!-- <i class="fas fa-birthday-cake"></i> -->
-                            </p>
-                            <i class="text-justify" id="profile-detail"></i>
-                            <table>
-                                <tr id="profile-email">
-                                    <!-- <td><i class="fas fa-envelope"></i></td>
+                    </div>
+                    <div class="col-lg-9">
+                        <h2 id="profile-name"></h2>
+                        <div class="profile-edit icon-gray"><i class="fas fa-edit" data-bs-toggle="modal"
+                                data-bs-target="#profileModal"></i></div>
+                        <p id="profile-birth">
+                            <!-- <i class="fas fa-birthday-cake"></i> -->
+                        </p>
+                        <i class="text-justify" id="profile-detail"></i>
+                        <table>
+                            <tr id="profile-email">
+                                <!-- <td><i class="fas fa-envelope"></i></td>
                                     <td>
                                         <p>hoangtutdst@gmail.com</p>
                                     </td> -->
-                                </tr>
-                                <tr id="profile-phone">
-                                    <!-- <td><i class="fas fa-phone"></i></td>
+                            </tr>
+                            <tr id="profile-phone">
+                                <!-- <td><i class="fas fa-phone"></i></td>
                                     <td>
                                         <p>0353360764</p>
                                     </td> -->
-                                </tr>
-                                <tr id="profile-address">
-                                    <!-- <td><i class="fas fa-map-marker-alt"></i></i></td>
+                            </tr>
+                            <tr id="profile-address">
+                                <!-- <td><i class="fas fa-map-marker-alt"></i></i></td>
                                     <td>
                                         <p>Soctrang - Vietnams</p>
                                     </td> -->
-                                </tr>
-                            </table>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="section-cv d-none" id="edu-section">
+                    <h4>
+                        <div class="icon-section btn-circle"><i class="fas fa-graduation-cap"></i></div> HỌC VẤN
+                    </h4>
+                    <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
+                            data-bs-target="#eduModal"></i></div>
+                    <!-- insert-info -->
+                </section>
+
+                <section class="section-cv d-none" id="work-section">
+                    <h4>
+                        <div class="icon-section btn-circle"><i class="fas fa-suitcase"></i></div> KINH NGHIỆM LÀM VIỆC
+                    </h4>
+                    <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
+                            data-bs-target="#workModal"></i></div>
+
+                    <!-- insert-info -->
+                </section>
+
+                <section class="section-cv d-none" id="volun-section">
+                    <h4>
+                        <div class="icon-section btn-circle"><i class="fas fa-globe"></i></div> TÌNH NGUYỆN & HOẠT ĐỘNG
+                        CỘNG ĐỒNG
+                    </h4>
+                    <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
+                            data-bs-target="#volunModal"></i></div>
+
+                    <!-- insert-info -->
+                </section>
+
+                <section class="section-cv d-none" id="skill-section">
+                    <h4>
+                        <div class="icon-section btn-circle"><i class="fas fa-cog"></i></div> KỸ NĂNG
+                    </h4>
+                    <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
+                            data-bs-target="#skillModal"></i></div>
+
+                    <!-- insert-info -->
+                </section>
+
+                <section class="section-cv d-none" id="hobby-section">
+                    <h4>
+                        <div class="icon-section btn-circle"><i class="fas fa-music"></i></div> SỞ THÍCH
+                    </h4>
+                    <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
+                            data-bs-target="#hobbyModal"></i></div>
+
+                    <!-- insert-info -->
+                </section>
+
+                <section id="option-section" class="d-flex">
+                    <!-- BUTTON -->
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Thêm thông tin
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+                                <b>Thông tin cá nhân</b></li>
+
+                            <hr class="dropdown-divider">
+
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eduModal">
+                                <b>Học vấn</b>
+                            </li>
+                            <hr class="dropdown-divider">
+
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#workModal">
+                                <b>Kinh nghiệm làm việc</b>
+                            </li>
+
+                            <hr class="dropdown-divider">
+
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#volunModal">
+                                <b>Tình nguyện & Hoạt động cộng đồng</b>
+                            </li>
+
+                            <hr class="dropdown-divider">
+
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#skillModal">
+                                <b>Kỹ năng</b>
+                            </li>
+
+                            <hr class="dropdown-divider">
+
+                            <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#hobbyModal">
+                                <b>Sở thích</b>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- MODAL -->
+                    <!-- profileModal -->
+                    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Thông tin cá nhân</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="name"><b>Họ tên:</b></label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+
+                                    <div class="radio row">
+                                        <div class="col-md-2"><b>Giới tính:</b></div>
+                                        <div class="col-md-10">
+                                            <input type="radio" name="sex" id="gtNam" value="Nam"><label
+                                                for="gtNam">Nam</label>
+                                            <input type="radio" name="sex" id="gtNu" value="Nữ"><label
+                                                for="gtNu">Nữ</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="birth"><b>Ngày sinh:</b></label>
+                                        <input type="date" class="form-control" id="birth">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="address"><b>Địa chỉ:</b></label>
+                                        <input type="text" class="form-control" id="address">
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label for="email"><b>Email:</b></label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="phone"><b>Số điện thoại:</b></label>
+                                            <input type="text" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="comment"><b>Mô tả:</b></label>
+                                        <textarea class="form-control" rows="3" id="comment"></textarea>
+                                    </div>
+
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveProfile()">
+                                            <span>Lưu thông tin cá nhân</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </section>
+                    </div>
+                    <!-- eduModal -->
+                    <div class="modal fade" id="eduModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Học vấn</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="schoolName"><b>Tên trường (Cấp 3, đại học, ...):</b></label>
+                                        <input type="text" class="form-control" id="schoolName">
+                                    </div>
 
-                    <section class="section-cv d-none" id="edu-section">
-                        <h4><div class="icon-section btn-circle"><i class="fas fa-graduation-cap"></i></div> HỌC VẤN</h4>
-                        <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
-                                data-bs-target="#eduModal"></i></div>
-                        <!-- insert-info -->
-                    </section>
+                                    <div class="form-group">
+                                        <label for="schoolAdd"><b>Địa điểm:</b></label>
+                                        <input type="text" class="form-control" id="schoolAdd">
+                                    </div>
 
-                    <section class="section-cv d-none" id="work-section">
-                        <h4><div class="icon-section btn-circle"><i class="fas fa-suitcase"></i></div> KINH NGHIỆM LÀM VIỆC</h4>
-                        <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
-                                data-bs-target="#workModal"></i></div>
+                                    <div class="form-group row">
 
-                        <!-- insert-info -->
-                    </section>
+                                        <div class="col-md-6">
+                                            <label for="startSchool"><b>Từ:</b></label>
+                                            <input type="date" class="form-control" id="startSchool">
+                                        </div>
 
-                    <section class="section-cv d-none" id="volun-section">
-                        <h4><div class="icon-section btn-circle"><i class="fas fa-globe"></i></div> TÌNH NGUYỆN & HOẠT ĐỘNG CỘNG ĐỒNG</h4>
-                        <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
-                                data-bs-target="#volunModal"></i></div>
+                                        <div class="col-md-6">
+                                            <label for="endSchool"><b>Đến:</b></label>
+                                            <input type="date" class="form-control" id="endSchool">
+                                        </div>
+                                    </div>
 
-                        <!-- insert-info -->
-                    </section>
+                                    <div class="form-group">
+                                        <label for="gpa"><b>GPA:</b></label>
+                                        <input type="text" class="form-control" id="gpa">
+                                    </div>
 
-                    <section class="section-cv d-none" id="skill-section">
-                        <h4><div class="icon-section btn-circle"><i class="fas fa-cog"></i></div> KỸ NĂNG</h4>
-                        <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
-                                data-bs-target="#skillModal"></i></div>
+                                    <div class="form-group">
+                                        <label for="ttichEdu"><b>Thành tích:</b></label>
+                                        <input type="text" class="form-control" id="ttichEdu">
+                                    </div>
 
-                        <!-- insert-info -->
-                    </section>
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveEdu()">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <section class="section-cv d-none" id="hobby-section">
-                        <h4><div class="icon-section btn-circle"><i class="fas fa-music"></i></div> SỞ THÍCH</h4>
-                        <div class="profile-edit"><i class="fas fa-plus icon-gray" data-bs-toggle="modal"
-                                data-bs-target="#hobbyModal"></i></div>
+                    <!-- workModal -->
+                    <div class="modal fade" id="workModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Kinh nghiệm làm việc</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="workPosition"><b>Vị trí/ Chuyên môn:</b></label>
+                                        <input type="text" class="form-control" id="workPosition">
+                                    </div>
 
-                        <!-- insert-info -->
-                    </section>
+                                    <div class="form-group">
+                                        <label for="company"><b>Công ty/ Tổ chức:</b></label>
+                                        <input type="text" class="form-control" id="company">
+                                    </div>
 
-                    <section id="option-section d-flex">
-                        <!-- BUTTON -->
-                        <div class="btn-group dropend">
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Thêm thông tin
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#profileModal"><b>Thông tin cá nhân</b></li>
+                                    <div class="form-group">
+                                        <label for="workAdd"><b>Địa điểm:</b></label>
+                                        <input type="text" class="form-control" id="workAdd">
+                                    </div>
 
-                                <hr class="dropdown-divider">
+                                    <div class="form-group row">
 
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eduModal">
-                                    <b>Học vấn</b>
+                                        <div class="col-md-6">
+                                            <label for="startWork"><b>Từ:</b></label>
+                                            <input type="date" class="form-control" id="startWork">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="endWork"><b>Đến:</b></label>
+                                            <input type="date" class="form-control" id="endWork">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="ttichWork"><b>Thành tích:</b></label>
+                                        <input type="text" class="form-control" id="ttichWork">
+                                    </div>
+
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveWork()">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- volunModal -->
+                    <div class="modal fade" id="volunModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Hoạt động tình nguyện</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="volunPosition"><b>Vị trí/ Vai trò:</b></label>
+                                        <input type="text" class="form-control" id="volunPosition">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="volunEvent"><b>Tên tổ chức/ Sự kiện:</b></label>
+                                        <input type="text" class="form-control" id="volunEvent">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="volunAdd"><b>Địa điểm:</b></label>
+                                        <input type="text" class="form-control" id="volunAdd">
+                                    </div>
+
+                                    <div class="form-group row">
+
+                                        <div class="col-md-6">
+                                            <label for="startVolun"><b>Từ:</b></label>
+                                            <input type="date" class="form-control" id="startVolun">
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label for="endVolun"><b>Đến:</b></label>
+                                            <input type="date" class="form-control" id="endVolun">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="ttichVolun"><b>Thành tích:</b></label>
+                                        <input type="text" class="form-control" id="ttichVolun">
+                                    </div>
+
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveVolun()">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- skillModal -->
+                    <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Kỹ năng</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="skillName"><b>Tên kỹ năng:</b></label>
+                                        <input type="text" class="form-control" id="skillName">
+                                    </div>
+
+                                    <div class="radio row">
+                                        <div class="col-md-2"><b>Level:</b></div>
+                                        <div class="col-md-10">
+                                            <select id="levelSkill">
+                                                <option value="5">5</option>
+                                                <option value="4">4</option>
+                                                <option value="3">3</option>
+                                                <option value="2">2</option>
+                                                <option value="1">1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveSkill()">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- hobbyModal -->
+                    <div class="modal fade" id="hobbyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-warning">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sở thích</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="hobbyName"><b>Sở thích:</b></label>
+                                        <input type="text" class="form-control" id="hobbyName">
+                                    </div>
+
+                                    <div class="dp-flex-juscenter mt-3">
+                                        <button class="btn" onclick="saveHobby()">
+                                            <span>Lưu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- BADGE -->
+        <button type="button" class="btn btn-primary position-fixed btn-radCircle" id="badge-listSave" data-bs-toggle="tooltip" title="Bài viết đã lưu">
+            <i class="fas fa-archive"></i>
+            <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle" id="badge-numSaved">
+            </span>
+        </button>
+    </main>
+
+    <footer id="footer-section">
+        <div class="footer-container">
+            <div class="row">
+                <div class="contain-footer col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Name <span>web</span></h2>
+                        <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
+                            chữ. Lorem Ipsum đã
+                            trở thành văn bản giả tiêu chuẩn của
+                            ngành kể từ những năm 1500</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Menu</h2>
+                        <ul class="list-unstyled ftco-animate text-footer">
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li><a href="job.html">Tuyển dụng</a></li>
+                            <li><a href="createCV.html">Tạo CV</a></li>
+                            <li><a href="none.html">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-us">
+                        <h2>Contact Us</h2>
+                        <div class="list-contact ftco-animate">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-map-marker"></i>
+                                    <span class="text-footer">203 Fake St. Mountain View, San Francisco,
+                                        California,
+                                        USA</span>
                                 </li>
-                                <hr class="dropdown-divider">
-
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#workModal">
-                                    <b>Kinh nghiệm làm việc</b>
-                                </li>
-
-                                <hr class="dropdown-divider">
-
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#volunModal">
-                                    <b>Tình nguyện & Hoạt động cộng đồng</b>
-                                </li>
-
-                                <hr class="dropdown-divider">
-
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#skillModal">
-                                    <b>Kỹ năng</b>
-                                </li>
-
-                                <hr class="dropdown-divider">
-                                
-                                <li class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#hobbyModal">
-                                    <b>Sở thích</b>
-                                </li>
+                                <li><a href="#"><i class="fas fa-phone"></i><span class="text-footer">+2 392
+                                            3929
+                                            210</span></a></li>
+                                <li><a href="#"><i class="fas fa-envelope"></i><span
+                                            class="text-footer">info@yourdomain.com</span></a></li>
                             </ul>
                         </div>
-
-                        <!-- MODAL -->
-                        <!-- profileModal -->
-                        <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Thông tin cá nhân</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="name"><b>Họ tên:</b></label>
-                                            <input type="text" class="form-control" id="name">
-                                        </div>
-
-                                        <div class="radio row">
-                                            <div class="col-md-2"><b>Giới tính:</b></div>
-                                            <div class="col-md-10">
-                                                <input type="radio" name="sex" id="gtNam" value="Nam"><label
-                                                    for="gtNam">Nam</label>
-                                                <input type="radio" name="sex" id="gtNu" value="Nữ"><label
-                                                    for="gtNu">Nữ</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="birth"><b>Ngày sinh:</b></label>
-                                            <input type="date" class="form-control" id="birth">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="address"><b>Địa chỉ:</b></label>
-                                            <input type="text" class="form-control" id="address">
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-md-6">
-                                                <label for="email"><b>Email:</b></label>
-                                                <input type="email" class="form-control" id="email">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="phone"><b>Số điện thoại:</b></label>
-                                                <input type="text" class="form-control" id="phone">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="comment"><b>Mô tả:</b></label>
-                                            <textarea class="form-control" rows="3" id="comment"></textarea>
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveProfile()">
-                                                <span>Lưu thông tin cá nhân</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- eduModal -->
-                        <div class="modal fade" id="eduModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Học vấn</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="schoolName"><b>Tên trường (Cấp 3, đại học, ...):</b></label>
-                                            <input type="text" class="form-control" id="schoolName">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="schoolAdd"><b>Địa điểm:</b></label>
-                                            <input type="text" class="form-control" id="schoolAdd">
-                                        </div>
-
-                                        <div class="form-group row">
-
-                                            <div class="col-md-6">
-                                                <label for="startSchool"><b>Từ:</b></label>
-                                                <input type="date" class="form-control" id="startSchool">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="endSchool"><b>Đến:</b></label>
-                                                <input type="date" class="form-control" id="endSchool">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="gpa"><b>GPA:</b></label>
-                                            <input type="text" class="form-control" id="gpa">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="ttichEdu"><b>Thành tích:</b></label>
-                                            <input type="text" class="form-control" id="ttichEdu">
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveEdu()">
-                                                <span>Lưu</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- workModal -->
-                        <div class="modal fade" id="workModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Kinh nghiệm làm việc</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="workPosition"><b>Vị trí/ Chuyên môn:</b></label>
-                                            <input type="text" class="form-control" id="workPosition">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="company"><b>Công ty/ Tổ chức:</b></label>
-                                            <input type="text" class="form-control" id="company">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="workAdd"><b>Địa điểm:</b></label>
-                                            <input type="text" class="form-control" id="workAdd">
-                                        </div>
-
-                                        <div class="form-group row">
-
-                                            <div class="col-md-6">
-                                                <label for="startWork"><b>Từ:</b></label>
-                                                <input type="date" class="form-control" id="startWork">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="endWork"><b>Đến:</b></label>
-                                                <input type="date" class="form-control" id="endWork">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="ttichWork"><b>Thành tích:</b></label>
-                                            <input type="text" class="form-control" id="ttichWork">
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveWork()">
-                                                <span>Lưu</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- volunModal -->
-                        <div class="modal fade" id="volunModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Hoạt động tình nguyện</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="volunPosition"><b>Vị trí/ Vai trò:</b></label>
-                                            <input type="text" class="form-control" id="volunPosition">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="volunEvent"><b>Tên tổ chức/ Sự kiện:</b></label>
-                                            <input type="text" class="form-control" id="volunEvent">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="volunAdd"><b>Địa điểm:</b></label>
-                                            <input type="text" class="form-control" id="volunAdd">
-                                        </div>
-
-                                        <div class="form-group row">
-
-                                            <div class="col-md-6">
-                                                <label for="startVolun"><b>Từ:</b></label>
-                                                <input type="date" class="form-control" id="startVolun">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="endVolun"><b>Đến:</b></label>
-                                                <input type="date" class="form-control" id="endVolun">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="ttichVolun"><b>Thành tích:</b></label>
-                                            <input type="text" class="form-control" id="ttichVolun">
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveVolun()">
-                                                <span>Lưu</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- skillModal -->
-                        <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Kỹ năng</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="skillName"><b>Tên kỹ năng:</b></label>
-                                            <input type="text" class="form-control" id="skillName">
-                                        </div>
-
-                                        <div class="radio row">
-                                            <div class="col-md-2"><b>Level:</b></div>
-                                            <div class="col-md-10">
-                                                <select id="levelSkill">
-                                                    <option value="5">5</option>
-                                                    <option value="4">4</option>
-                                                    <option value="3">3</option>
-                                                    <option value="2">2</option>
-                                                    <option value="1">1</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveSkill()">
-                                                <span>Lưu</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- hobbyModal -->
-                        <div class="modal fade" id="hobbyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header bg-warning">
-                                        <h5 class="modal-title" id="exampleModalLabel">Sở thích</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                            <label for="hobbyName"><b>Sở thích:</b></label>
-                                            <input type="text" class="form-control" id="hobbyName">
-                                        </div>
-
-                                        <div class="dp-flex-juscenter mt-3">
-                                            <button class="btn" onclick="saveHobby()">
-                                                <span>Lưu</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </section>
-                </div>
-            </div>
-        </main>
-
-        <footer id="footer-section">
-            <div class="footer-container">
-                <div class="row">
-                    <div class="contain-footer col-md-3">
-                        <div class="ftco-footer-widget mb-4">
-                            <h2 class="ftco-heading-2">Name <span>web</span></h2>
-                            <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
-                                chữ. Lorem Ipsum đã
-                                trở thành văn bản giả tiêu chuẩn của
-                                ngành kể từ những năm 1500</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-2">
-                        <div class="ftco-footer-widget mb-4 ml-md-5">
-                            <h2 class="ftco-heading-2">Menu</h2>
-                            <ul class="list-unstyled ftco-animate text-footer">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Jobs</a></li>
-                                <li><a href="#">Create CV</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="contact-us">
-                            <h2>Contact Us</h2>
-                            <div class="list-contact ftco-animate">
-                                <ul>
-                                    <li>
-                                        <i class="fas fa-map-marker"></i>
-                                        <span class="text-footer">203 Fake St. Mountain View, San Francisco,
-                                            California,
-                                            USA</span>
-                                    </li>
-                                    <li><a href="#"><i class="fas fa-phone"></i><span class="text-footer">+2 392
-                                                3929
-                                                210</span></a></li>
-                                    <li><a href="#"><i class="fas fa-envelope"></i><span
-                                                class="text-footer">info@yourdomain.com</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="feed-back">
-                            <h2 class="ftco-heading-2">Feedback</h2>
-                            <div class="input-feed">
-                                <input type="text" class="ftco-animate">
-                                <button class="btn-blue ftco-animate"><i class="fas fa-paper-plane"></i></button>
-                            </div>
-                            <div class="social-net">
-                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                            class="fab fa-facebook"></i></a>
-                                </div>
-                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                            class="fab fa-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p class="copy-right">
-                            Copyright © 2021 Bản quyền thuộc về nhóm 4
-                        </p>
+
+                <div class="col-md-3">
+                    <div class="feed-back">
+                        <h2 class="ftco-heading-2">Feedback</h2>
+                        <div class="input-feed">
+                            <input type="text" class="ftco-animate">
+                            <button class="btn-blue ftco-animate"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="social-net">
+                            <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                        class="fab fa-facebook"></i></a>
+                            </div>
+                            <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                        class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copy-right">
+                        Copyright © 2021 Bản quyền thuộc về nhóm 4
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>

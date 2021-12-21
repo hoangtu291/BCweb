@@ -98,6 +98,69 @@ var listJob = {
 
 }
 
+var listHotPost = {
+    "job17": {
+        "nghenghiep": "Thiết kế đồ họa",
+        "chude": "[HCM] Drviet Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
+        "hanchot": "20/01/2022",
+        "luong": "4 triệu vnđ - 8 triệu vnđ / tháng",
+        "kinhnghiem": "Cần có kinh nghiệm",
+        "diachi": "TP Hồ Chí Minh",
+        "tinhchatcongviec": "Toàn thời gian",
+        "hinhanh": "data/images/drviet-bg.png",
+    },
+    "job18": {
+        "nghenghiep": "Thiết kế đồ họa",
+        "chude": "[HN] Clever Group Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
+        "hanchot": "20/01/2022",
+        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
+        "kinhnghiem": "Không cần kinh nghiệm",
+        "diachi": "Hà Nội",
+        "tinhchatcongviec": "Toàn thời gian",
+        "hinhanh": "data/images/clevergroup-bg.png",
+    },
+    "job19": {
+        "nghenghiep": "Thiết kế đồ họa",
+        "chude": "[HN] Tập Đoàn IDD Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
+        "hanchot": "31/12/2021",
+        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
+        "kinhnghiem": "Cần có kinh nghiệm",
+        "diachi": "Hà Nội",
+        "tinhchatcongviec": "Toàn thời gian",
+        "hinhanh": "data/images/idd-bg.png",
+    },
+    "job20": {
+        "nghenghiep": "Kỹ sư phần mềm",
+        "chude": "[HN/HCM] TalentSite Tuyển Dụng Thực Tập Sinh Software Engineer",
+        "hanchot": "27/12/2021",
+        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
+        "kinhnghiem": "Không cần kinh nghiệm",
+        "diachi": "Hà Nội/TP Hồ Chí Minh",
+        "tinhchatcongviec": "Toàn thời gian",
+        "hinhanh": "data/images/talentsite-bg.png",
+    },
+    "job21": {
+        "nghenghiep": "Giảng viên IELTS",
+        "chude": "[Online] Trung Tâm Anh Ngữ Pasal Tuyển Dụng Giảng Viên IELTS",
+        "hanchot": "30/12/2021",
+        "luong": "4 trăm vnđ - 6 trăm vnđ / buổi",
+        "kinhnghiem": "Không cần kinh nghiệm",
+        "diachi": "Hà Nội/TP Hồ Chí Minh/Đà Nẵng",
+        "tinhchatcongviec": "Bán thời gian",
+        "hinhanh": "data/images/pasal-bg.png",
+    },
+    "job22": {
+        "nghenghiep": "Nhân viên Marketing",
+        "chude": "[HCM] Saint L'Beau Tuyển Dụng Nhân Viên Marketing",
+        "hanchot": "31/12/2021",
+        "luong": "4 triệu vnđ - 6 triệu vnđ / tháng",
+        "kinhnghiem": "Cần có kinh nghiệm",
+        "diachi": "TP Hồ Chí Minh",
+        "tinhchatcongviec": "Bán thời gian",
+        "hinhanh": "data/images/saint-bg.png",
+    }
+}
+
 
 var scrollWindow = function () {
     $(window).scroll(function () {
@@ -246,7 +309,7 @@ function loadJob() {
                 </div>
                 <div class="item-post-footer">
                     <div class="around-btnsave-post btn-radCircle" data-bs-toggle="tooltip"
-                        title="Lưu bài viết">
+                        title="Lưu bài viết" onclick="savePost('${"job" + index}')">
                         <div class="btn-save-card btn-save btn-circle"></div>
                     </div>
                 </div>
@@ -270,7 +333,7 @@ function loadJob() {
         $('.navbar-brand .move-brand').removeClass('move-re');
     });
 
-    $('.post-item, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
+    $('.post-item .item-post-header, .post-item .item-post-main, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
         window.location.href = `details.html?job=${this.id}`;
     });
 
@@ -326,13 +389,18 @@ $('.post-item').mouseleave(function hiddenSave() {
 
 
 // chuyển đến trang chi tiết
-$('.post-item, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
+$('.post-item .item-post-header, .post-item .item-post-main, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
     window.location.href = `details.html?job=${this.id}`;
 });
 
 // chuyển đến trang đăng nhập
 $('#btn-signin').click(function () {
     window.location.href = "yboxClone/dangnhap.html";
+});
+
+// chuyển đến trang xem bài viết đã lưu
+$('#badge-listSave').click(function () {
+    window.location.href = "save.html";
 })
 
 
@@ -503,6 +571,76 @@ function removeInfoElement(element) {
         $("#" + idElement).addClass('d-none');
     }
 }
+
+
+// LƯU BÀI VIẾT
+function savePost(code) {
+    var message = "Lưu bài viết thành công";
+    var alert = "alert-success"
+    if (localStorage[code] !== undefined) {
+        message = "Lưu bài viết thất bại do bài viết đã được lưu trước đó";
+        alert = "alert-danger"
+    }
+
+    if (listJob[code] !== undefined) {
+        localStorage.setItem(code, JSON.stringify(listJob[code]));
+    }
+    else {
+        localStorage.setItem(code, JSON.stringify(listHotPost[code]));
+    }
+
+    $('#alert').addClass(alert).removeClass('d-none');
+
+    $('#alert').html(message);
+
+    setTimeout(() => {
+        $('#alert').addClass('hide-alert').removeClass(alert);
+
+        setTimeout(() => {
+            $('#alert').addClass('d-none').removeClass('hide-alert');
+        }, 500);
+    }, 1000);
+
+    $('#badge-numSaved').html(localStorage.length);
+}
+
+function showListSave() {
+    $('tbody#list-save').html("");
+
+    if (localStorage.length == 0) {
+        $('tbody#list-save').html(`<tr><td colspan="4" class="text-center"><b>Chưa có bài viết nào được lưu</b></td></tr>`)
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+        $('tbody#list-save').append(`<tr>
+                        <td rowspan="2" style="height: 95px; width: fit-content;"><img
+                                src="${JSON.parse(localStorage[localStorage.key(i)]).logo}" alt="Ảnh bài viết" height="100%"></td>
+                        <td colspan="2" style="width: max-content;"><b>${JSON.parse(localStorage[localStorage.key(i)]).title}</b></td>
+                        <td rowspan="2" class="text-center" style="width: 50px; height: 100%; line-height: 70px;"><i class="fas fa-trash-alt icon-red del-save" onclick="removeItemSave('${localStorage.key(i)}')"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="end-date"><span class="txtEnd-date">${JSON.parse(localStorage[localStorage.key(i)]).hanchot}</span></div>
+                        </td>
+                        <td class="text-end"><b>Lương:</b> ${JSON.parse(localStorage[localStorage.key(i)]).luong === undefined ? "Thỏa thuận" : JSON.parse(localStorage[localStorage.key(i)]).luong}</td>
+                    </tr><tr><th colspan="4"></th></tr>`);
+    }
+    $('#badge-numSaved').html(localStorage.length);
+
+}
+
+$('#badge-numSaved').html(localStorage.length);
+
+function removeItemSave(code) {
+    if (localStorage[code] !== "undefined") {
+        localStorage.removeItem(code);
+        showListSave();
+    }
+}
+
+window.onstorage = () => {
+    showListSave();
+};
 
 // LOADED
 setTimeout(function () { $('body').addClass('loaded'); }, 300);

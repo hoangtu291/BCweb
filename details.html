@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Satisfy&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
@@ -29,17 +30,37 @@
         <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
             <div class="main-nav">
                 <div class="nav-left">
-                    <div class="nav-logo logo btn-circle" id="logo-brand"></div>
-                    <a class="navbar-brand" href="index.html">Name <span>web</span></a>
+                    <!-- <div class="nav-logo logo btn-circle" id="logo-brand"></div> -->
+                    <a class="navbar-brand" href="index.html" style="font-size: 28px;">
+                        find<div class="move-brand move-re">er</div>
+                        <!-- <i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i> -->
+                        <!-- <div class="round-brand btn-circle"><i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i></div> -->
+                        <!-- Name <span>web</span> -->
+                    </a>
                 </div>
-
+    
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <div class="navbar-nav ml-auto nav-center">
-                        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-                        <div class="nav-item active"><a href="#" class="nav-link">Jobs</a></div>
-                        <div class="nav-item"><a href="createCV.html" class="nav-link">CreateCV</a></div>
+                        <div class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></div>
+                        <div class="nav-item"><a href="job.html" class="nav-link">Tuyển dụng</a></div>
+                        <div class="nav-item"><a href="javascript:checkRedirectCV();" class="nav-link">Tạo CV</a></div>
                         <div class="nav-right">
-                            <button class="btn-signin btn-blue">Sign in</button>
+                            <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
+    
+                            <div class="dropdown d-none" id="nav-account">
+                                <div class="dropbtn"><a href="javascript:void(0);"></a><i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <ul>
+                                        <li>Link 1</li>
+                                        <li>Link 2</li>
+                                        <li onclick="logOut()">Đăng xuất</li>
+                                    </ul>
+                                    <!-- <a href="#"></a>
+                                            <a href="#">Link 2</a>
+                                            <a href="#" onclick="logOut()"></a> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,6 +233,13 @@
         <div class="nut-utuyen">
             <input type="submit" value="ỨNG TUYỂN ONLINE">
         </div>
+
+        <!-- BADGE -->
+        <button type="button" class="btn btn-primary position-fixed btn-radCircle" id="badge-listSave" data-bs-toggle="tooltip" title="Bài viết đã lưu">
+            <i class="fas fa-archive"></i>
+            <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle" id="badge-numSaved">
+            </span>
+        </button>
     </main>
 
     <footer id="footer-section">
@@ -231,10 +259,10 @@
                     <div class="ftco-footer-widget mb-4 ml-md-5">
                         <h2 class="ftco-heading-2">Menu</h2>
                         <ul class="list-unstyled ftco-animate text-footer">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Create CV</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li><a href="job.html">Tuyển dụng</a></li>
+                            <li><a href="javascript:checkRedirectCV();">Tạo CV</a></li>
+                            <li><a href="none.html">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>

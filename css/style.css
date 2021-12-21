@@ -147,6 +147,38 @@ button {
     background-color: #031020;
 }
 
+.alert-success, .alert-danger {
+    transition: .5s;
+}
+
+.hide-alert {
+    opacity: 0;
+    transition: .5s;
+}
+
+/* BADGE - SAVE */
+
+#badge-listSave {
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    background-color: #0c2d50;
+    border: 2px solid #ccc;
+    bottom: 50px;
+    right: 50px;
+}
+
+#badge-listSave span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .image-logo {
     width: 50px;
     height: 50px;
@@ -206,6 +238,9 @@ button {
 .post-item {
     height: 250px;
     margin: 10px 0px;
+}
+
+.post-item .item-post-header, .post-item .item-post-main {
     cursor: pointer;
 }
 
@@ -221,8 +256,10 @@ button {
 }
 
 .btn-save {
-    width: 38px;
-    height: 38px;
+    position: relative;
+    top: 0.5px;
+    width: 40px;
+    height: 40px;
     background-image: url(../data/icon/save-icon.svg);
     filter: opacity(.5);
     background-repeat: no-repeat;
@@ -550,6 +587,16 @@ input[type='text']:focus {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.navbar-brand:not(.navbar-brand .move-brand) {
+    animation: logoFind 2s ease-out infinite;
+}
+
+@keyframes logoFind {
+    0% {
+        color: black;
+    }
 }
 
 .navbar-brand span {
@@ -1132,6 +1179,11 @@ input[type='text']:focus {
 #profile-section i {
     margin-right: 10px;
 }
+
+#option-section {
+    margin-bottom: 20px;
+}
+
 
 /* RESOPNSIVE */
 /* <= 1290 */
