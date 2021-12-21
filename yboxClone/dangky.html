@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <title>Đăng kí</title>
+</head>
+<body>
+    <!--BẬT TẮT BẰNG VIỆC THÊM/ XOÁ CLASS "disable" kế bên -->
+    
+    <!-- Form đăng ký -->
+    <div class="app">
+        <div class="page-login-form">
+            <div class="logo-img"></div>
+            <form method="POST" action="../index.html" class="form-login" onsubmit="return dangky(this)">
+                <h3 class="form-title">Đăng ký</h3>
+                <button class="btn login-fb-btn">
+                    <i class="fab fa-facebook-square"></i>
+                    Tiếp tục với facebook
+                </button>
+                <div class="form-item">
+                    <input type="text" name="fullname" id="fullname" class="form-control fullname"
+                    placeholder="Họ và tên" required onblur="checkname(this,'Vui lòng nhập họ tên!')">
+                    <span class="form-contol-msg"></span>
+                </div>
+                <div class="form-item">
+                    <select name="gender" id="gender" class="form-control gender" onblur="checkname(this,'Vui lòng chọn giới tính!')" required>
+                        <option value="">Chọn giới tính</option>
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                    <span class="form-contol-msg"></span>
+                </div>
+                <div class="form-item">
+                    <input type="text" name="email" id="email" class="form-control email"
+                    placeholder="Email của bạn"  onblur="checkname(this,'Vui lòng nhập email!')" required>
+                    <span class="form-contol-msg"></span>
+                </div>
+                <div class="form-item">
+                    <input type="password" name="password" id="password" class="form-control password"  onblur="checkpswd(this)"
+                    placeholder="Mật khẩu"  required>
+                    <span class="form-contol-msg"></span>
+                </div>
+                <div class="separator">
+                    <span class="separator-txt">Thêm</span>
+                </div>
+                <div class="form-item">
+                    <div class="terms-of-use-group">
+                        <input type="checkbox" name="terms-of-use" id="terms-of-use" class="form-control terms-of-use"
+                        placeholder="Mật khẩu" onchange="checkedbox(this)">
+                        <label for="terms-of-use" class="terms-of-use-txt">
+                            Bằng việc đăng ký, bạn đã chấp nhận với
+                            <a href="">Điều khoản sử dụng</a>
+                            của chúng tôi.
+                        </label>
+                    </div>
+                    <span class="form-contol-msg"></span>
+                </div>
+                <button class="btn form-submit-btn" type="submit">
+                    Đăng ký
+                </button>
+            </form>
+            <a href="" class="forgot-password-link">Quên mật khẩu?</a>
+            <div class="signup-href">
+                <span>Đã có tài khoản?</span>
+                <a href="dangnhap.html" class="login-link">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

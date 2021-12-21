@@ -24,11 +24,58 @@ body.error404 {
     height: 100vh;
 }
 
-body.error404::after {
+/* body.error404::after {
     content: "Trang này chưa viết";
     color: #0c2d50;
     font-size: 80px;
     font-family: 'Dancing Script', cursive;
+    animation: anni 2s linear infinite;
+} */
+
+
+body.error404::before {
+    content: "find";
+    font-family: 'Satisfy', cursive;
+    font-size: 80px;
+    animation: anni 2s linear infinite;
+}
+
+body.error404::after {
+    content: "\A0 er";
+    font-family: 'Satisfy', cursive;
+    font-size: 80px;
+    animation: anni 2s linear infinite;
+}
+
+@keyframes anni {}
+
+/* @keyframes anni {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1..5);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    90% {
+        transform: scale(0.95);
+    }
+} */
+
+/* /------------------------------------------ */
+
+.container-1024 {
+    width: 1024px;
+}
+
+.dp-flex-juscenter {
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -36,7 +83,7 @@ h1 {
     font-weight: 600;
 }
 
-h1 span, h2 span, h3 span, h4 span, h5 span, .navbar-brand span {
+h1 span, h2 span, h3 span, h4 span, h5 span, .navbar-brand span:not(.navbar-brand span) {
     color: #fff;
     background-color: #0c2d50;
     padding: 0 3px;
@@ -45,6 +92,15 @@ h1 span, h2 span, h3 span, h4 span, h5 span, .navbar-brand span {
 /* i {
     margin-right: 10px;
 } */
+
+input[type='text'].form-control {
+    border-width: 1px;
+}
+
+.form-control:focus {
+    box-shadow: 0px 0px 5px 0px #0c2d5075;
+
+}
 
 .oi-menu:before {
     content: '\e09b';
@@ -301,6 +357,51 @@ input[type='text']:focus {
     transition: .3s;
 }
 
+.dropdown-item {
+    cursor: pointer;
+}
+
+.form-group {
+    margin: 10px 0px;
+}
+
+.modal button.btn {
+    width: 70%;
+    background-color: #FFC800;
+    color: #031020;
+    font-weight: 600;
+}
+
+.modal button.btn:hover {
+    background-color: #fad75b;
+}
+
+.icon-gray, .icon-yellow, .icon-red {
+    cursor: pointer;
+}
+
+.icon-yellow {
+    color: #d6a800;
+}
+
+.icon-gray {
+    color: #aaaaa9;
+}
+
+.icon-red {
+    color: #ff6a6a;
+}
+
+.icon-gray:hover {
+    color: #0c2d50;
+    transition: .3s;
+}
+
+.icon-red:hover {
+    color: #fc4343;
+    transition: .3s;
+}
+
 /* LOADER */
 #loader-wrapper {
     position: fixed;
@@ -443,6 +544,29 @@ input[type='text']:focus {
     /* background-color: #fff; */
 }
 
+.navbar-brand {
+    /* font-family: 'Architects Daughter', cursive; */
+    font-family: 'Satisfy', cursive;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-brand span {
+    transition: .3s;
+}
+
+.navbar-brand .move-brand {
+    position: absolute;
+    left: 60px;
+    transition: .1s;
+}
+
+.move-brand.move-re {
+    left: 55px;
+    transition: .3s;
+}
+
 .nav-link, .navbar-brand {
     color: #000;
 }
@@ -468,7 +592,7 @@ input[type='text']:focus {
 .nav-left {
     display: flex;
     align-items: center;
-    width: 200px;
+    width: fit-content;
 }
 
 .nav-center {
@@ -476,13 +600,17 @@ input[type='text']:focus {
     justify-content: flex-end;
 }
 
-
-
-.nav-center a {
+.nav-center a, .dropdown-content ul li {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 13px;
+    transition: .1s;
     margin: 0px 10px;
+}
+
+.nav-center a:hover, .nav-center .fas:hover, .dropdown-content ul li:hover {
+    transform: scale(1.05);
+    transition: .3s;
 }
 
 .nav-right {
@@ -492,10 +620,47 @@ input[type='text']:focus {
 }
 
 .btn-signin {
-    width: 90px;
+    width: fit-content;
+    padding: 0px 10px;
     height: 25px;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 13px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1;
+    height: fit-content;
+}
+
+.dropdown-content ul {
+    margin-top: 10px;
+}
+
+.dropdown-content ul li {
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .nav-item.active {
@@ -561,6 +726,7 @@ input[type='text']:focus {
     padding-left: 30px;
     font-size: 18px;
     border-radius: 10px;
+    border-color: rgba(164, 163, 162, 0.38);
 }
 
 .container-home .main-intro #searchJob:focus {
@@ -790,9 +956,8 @@ input[type='text']:focus {
 
 /* LIST POST */
 
-#listpost-section {
+#listpost-section, #listpost {
     width: 100%;
-    /* background-color: red; */
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -897,9 +1062,80 @@ input[type='text']:focus {
 }
 
 
+/* CV-------------------------------------------------------------------------- */
+.profile-edit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.section-cv {
+    position: relative;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+    padding: 10px;
+}
+
+.section-cv h4 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.icon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #0c2d50;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.address-date {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: .4;
+    margin-top: -5px;
+}
+
+.info-element {
+    position: relative;
+    left: 20px;
+    margin-right: 20px;
+    line-height: 1;
+}
+
+#profile-section .img-profile {
+    display: inline-block;
+    vertical-align: middle;
+    width: 170px;
+    height: 170px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 12px;
+}
+
+#profile-section .img-profile img {
+    max-width: 100%;
+    width: 170px;
+    height: 170px;
+}
+
+#profile-section p {
+    margin: 5px 0px;
+}
+
+#profile-section i {
+    margin-right: 10px;
+}
+
 /* RESOPNSIVE */
-/* <= 1240 */
-@media screen and (max-width: 1239px) {
+/* <= 1290 */
+@media screen and (max-width: 1289px) {
     .container-home {
         height: 600px;
     }
@@ -919,7 +1155,7 @@ input[type='text']:focus {
     }
 
     .btn-signin {
-        width: 70px;
+        width: fit-content;
         font-size: 13px;
     }
 
@@ -1062,8 +1298,8 @@ input[type='text']:focus {
     }
 }
 
-/* <= 1200 */
-@media screen and (max-width: 1199px) {
+/* <= 1250 */
+@media screen and (max-width: 1249px) {
 
     .container-home {
         height: 500px;

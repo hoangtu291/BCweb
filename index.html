@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Satisfy&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
@@ -32,17 +33,36 @@
             <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
                 <div class="main-nav">
                     <div class="nav-left">
-                        <div class="nav-logo logo btn-circle" id="logo-brand"></div>
-                        <a class="navbar-brand" href="index.html">Name <span>web</span></a>
+                        <!-- <div class="nav-logo logo btn-circle" id="logo-brand"></div> -->
+                        <a class="navbar-brand" href="index.html" style="font-size: 28px;">
+                            find<div class="move-brand">er</div>
+                            <!-- <i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i> -->
+                            <!-- <div class="round-brand btn-circle"><i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i></div> -->
+                            <!-- Name <span>web</span> -->
+                        </a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <div class="navbar-nav ml-auto nav-center">
-                            <div class="nav-item active"><a href="index.html" class="nav-link">Home</a></div>
-                            <div class="nav-item"><a href="#" class="nav-link">Jobs</a></div>
-                            <div class="nav-item"><a href="#" class="nav-link">CreateCV</a></div>
+                            <div class="nav-item active"><a href="index.html" class="nav-link">Trang chủ</a></div>
+                            <div class="nav-item"><a href="#" class="nav-link">Tuyển dụng</a></div>
+                            <div class="nav-item"><a href="javascript:checkRedirectCV();" class="nav-link">Tạo CV</a></div>
                             <div class="nav-right">
-                                <button class="btn-signin btn-blue">Sign in</button>
+                                <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
+                                
+                                <div class="dropdown d-none" id="nav-account">
+                                    <div class="dropbtn"><a href="javascript:void(0);"></a><i class="fas fa-user-circle"></i></div>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Link 1</li>
+                                            <li>Link 2</li>
+                                            <li onclick="logOut()">Đăng xuất</li>
+                                        </ul>
+                                        <!-- <a href="#"></a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#" onclick="logOut()"></a> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,8 +90,6 @@
                             <button class="btn-blue">Search</button>
                         </div>
                     </div>
-
-
                 </div>
             </section>
 
@@ -698,81 +716,84 @@
                     </div>
                 </div>
             </section>
+        </main>
 
-            <footer id="footer-section">
-                <div class="footer-container">
-                    <div class="row">
-                        <div class="contain-footer col-md-3">
-                            <div class="ftco-footer-widget mb-4">
-                                <h2 class="ftco-heading-2">Name <span>web</span></h2>
-                                <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
-                                    chữ. Lorem Ipsum đã
-                                    trở thành văn bản giả tiêu chuẩn của
-                                    ngành kể từ những năm 1500</p>
-                            </div>
+        <footer id="footer-section">
+            <div class="footer-container">
+                <div class="row">
+                    <div class="contain-footer col-md-3">
+                        <div class="ftco-footer-widget mb-4">
+                            <h2 class="ftco-heading-2">Name <span>web</span></h2>
+                            <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
+                                chữ. Lorem Ipsum đã
+                                trở thành văn bản giả tiêu chuẩn của
+                                ngành kể từ những năm 1500</p>
                         </div>
+                    </div>
 
-                        <div class="col-md-2">
-                            <div class="ftco-footer-widget mb-4 ml-md-5">
-                                <h2 class="ftco-heading-2">Menu</h2>
-                                <ul class="list-unstyled ftco-animate text-footer">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Jobs</a></li>
-                                    <li><a href="#">Create CV</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                    <div class="col-md-2">
+                        <div class="ftco-footer-widget mb-4 ml-md-5">
+                            <h2 class="ftco-heading-2">Menu</h2>
+                            <ul class="list-unstyled ftco-animate text-footer">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Jobs</a></li>
+                                <li><a href="#">Create CV</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-us">
+                            <h2>Contact Us</h2>
+                            <div class="list-contact ftco-animate">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-map-marker"></i>
+                                        <span class="text-footer">203 Fake St. Mountain View, San Francisco,
+                                            California,
+                                            USA</span>
+                                    </li>
+                                    <li><a href="#"><i class="fas fa-phone"></i><span class="text-footer">+2 392
+                                                3929
+                                                210</span></a></li>
+                                    <li><a href="#"><i class="fas fa-envelope"></i><span
+                                                class="text-footer">info@yourdomain.com</span></a></li>
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="contact-us">
-                                <h2>Contact Us</h2>
-                                <div class="list-contact ftco-animate">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-map-marker"></i>
-                                            <span class="text-footer">203 Fake St. Mountain View, San Francisco,
-                                                California,
-                                                USA</span>
-                                        </li>
-                                        <li><a href="#"><i class="fas fa-phone"></i><span class="text-footer">+2 392
-                                                    3929
-                                                    210</span></a></li>
-                                        <li><a href="#"><i class="fas fa-envelope"></i><span
-                                                    class="text-footer">info@yourdomain.com</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="feed-back">
-                                <h2 class="ftco-heading-2">Feedback</h2>
-                                <div class="input-feed">
-                                    <input type="text" class="ftco-animate">
-                                    <button class="btn-blue ftco-animate"><i class="fas fa-paper-plane"></i></button>
-                                </div>
-                                <div class="social-net">
-                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                                class="fab fa-facebook"></i></a></div>
-                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                                class="fab fa-instagram"></i></a></div>
-                                    <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
-                                                class="fab fa-twitter"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <p class="copy-right">
-                                Copyright © 2021 2021 Bản quyền thuộc về nhóm 4
-                            </p>
+
+                    <div class="col-md-3">
+                        <div class="feed-back">
+                            <h2 class="ftco-heading-2">Feedback</h2>
+                            <div class="input-feed">
+                                <input type="text" class="ftco-animate">
+                                <button class="btn-blue ftco-animate"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                            <div class="social-net">
+                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                            class="fab fa-facebook"></i></a>
+                                </div>
+                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="logo-brand btn-circle ftco-animate"><a href="#"><i
+                                            class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
-        </main>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copy-right">
+                            Copyright © 2021 Bản quyền thuộc về nhóm 4
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
