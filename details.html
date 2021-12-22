@@ -19,7 +19,7 @@
     <title>Chi tiết</title>
 </head>
 
-<body>
+<body onload="showDetails()">
 
     <!-- LOADER -->
     <div id="loader-wrapper">
@@ -31,8 +31,8 @@
             <div class="main-nav">
                 <div class="nav-left">
                     <!-- <div class="nav-logo logo btn-circle" id="logo-brand"></div> -->
-                    <a class="navbar-brand" href="index.html" style="font-size: 28px;">
-                        find<div class="move-brand move-re">er</div>
+                    <a class="navbar-brand brand-name" href="index.html" style="font-size: 28px;">
+                        finder
                         <!-- <i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i> -->
                         <!-- <div class="round-brand btn-circle"><i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i></div> -->
                         <!-- Name <span>web</span> -->
@@ -76,14 +76,13 @@
 
     <main style="width: 1024px; margin: 0 auto;">
         <div class="avt-cty">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1415797607/pvx0iuwh98toz4sqvu8l.png"
-                alt="avt">
-            <a href="#" class="name-cty">BraveBits Vietnam</a>
-            <a href="#" class="name-sk">@Tuyển dụng</a>
+            <img alt="avt" id="logo-cty" style="border: 1px solid #ccc">
+            <a href="#" class="name-cty"></a>
+            <a href="#" class="name-sk">&nbsp;@Tuyển dụng</a>
         </div>
         <div class="title-td tdung">
             <!-- <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1415797607/pvx0iuwh98toz4sqvu8l.png" alt="logo"> -->
-            <h1>[HN] Công Ty Công Nghệ BraveBits Tuyển Dụng Chuyên Viên Digital Marketing Full-time 2021</h1>
+            <h1></h1>
         </div>
         <div class="main-gthieu-cty tdung">
             <div class="icon-title">
@@ -91,7 +90,7 @@
                 <h2>GIỚI THIỆU CÔNG TY</h2>
             </div>
             <div class="gt-cty">
-                <img src="https://static.ybox.vn/2021/10/5/1634310159510-BB-1.jpeg" alt="cty">
+                <img alt="cty">
                 <p>
                     Thành lập từ năm 2008, BraveBits là một trong những startup đầu tiên của Việt Nam thành công trong
                     việc
@@ -111,7 +110,7 @@
                     <img src="https://static.ybox.vn/2020/10/3/1603251719446-tinh%20chat%20cong%20viec.png" alt="tc"
                         class="icon-gt">
                     <h3><b>Tính chất công việc:</b></h3>
-                    <h3>Toàn thời gian</h3>
+                    <h3 id="tinhchat-cv">Toàn thời gian</h3>
                 </div>
                 <div class="so-luoc-cviec2 slcv1">
                     <img src="https://static.ybox.vn/2020/10/3/1603251782758-chuyen%20mon.png" alt="cm" class="icon-gt">
@@ -121,20 +120,18 @@
                 <div class="so-luoc-cviec3 slcv1">
                     <img src="https://static.ybox.vn/2020/10/3/1603251752344-dia%20diem.png" alt="dd" class="icon-gt">
                     <h3><b>Địa điểm:</b></h3>
-                    <h3>Hà Nội</h3>
+                    <h3 id="diadiem-cv">Hà Nội</h3>
                 </div>
                 <div class="so-luoc-cviec4 slcv1">
                     <img src="https://static.ybox.vn/2020/10/3/1603251772800-kinh%20nghiem.png" alt="kn"
                         class="icon-gt">
                     <h3><b>Kinh nghiệm:</b></h3>
-                    <h3>Không cần kinh nghiệm - Đừng lo! Chúng tôi sẽ đào tạo bạn từ đầu. Có kinh nghiệm là điểm cộng!
-                    </h3>
+                    <h3 id="kinhnghiem-cv">Không cần kinh nghiệm - Đừng lo! Chúng tôi sẽ đào tạo bạn từ đầu. Có kinh nghiệm là điểm cộng!</h3>
                 </div>
                 <div class="so-luoc-cviec5 slcv1">
                     <img src="https://static.ybox.vn/2020/10/3/1603251682681-muc%20luong.png" alt="ml" class="icon-gt">
                     <h3><b>Mức lương:</b></h3>
-                    <h3>Thỏa thuận; Từ 10 Triệu - Dưới 15 Triệu VNĐ / Tháng; Từ 15 Triệu - Dưới 20 Triệu VNĐ / Tháng
-                    </h3>
+                    <h3 id="salary"></h3>
                 </div>
             </div>
         </div>
@@ -221,7 +218,7 @@
             <p>
             <ul>
                 <li><b>Ứng tuyển qua nút ỨNG TUYỂN ONLINE dưới đây.</b></li>
-                <li><b>Hạn cuối:</b> 23:59 ngày 1/1/2022</li>
+                <li id="hanchot"></li>
                 <li>
                     <b>Lưu ý:</b> Do hạn chế về mặt thời gian, chúng tôi có thể sẽ chỉ phản hồi kết quả ứng tuyển qua email cho
                     các ứng viên được chọn. Trong và sau khi ứng tuyển, vui lòng thường xuyên kiểm tra cả <b>hòm thư Spam
@@ -247,7 +244,7 @@
             <div class="row">
                 <div class="contain-footer col-md-3">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Name <span>web</span></h2>
+                        <a href="index.html" class="brand-name brand-large">finder</a>
                         <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
                             chữ. Lorem Ipsum đã
                             trở thành văn bản giả tiêu chuẩn của
@@ -324,7 +321,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-    <script src="data/data_js/banner-data.js"></script>
+    <script src="data/data_js/data.js"></script>
     <script src="data/data_js/cv-data.js"></script>
     <script src="js/script.js"></script>
 </body>

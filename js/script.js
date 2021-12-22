@@ -1,167 +1,4 @@
-var listJob = {
-    "job01": {
-        "hotennguoidang": "BraveBits Vietnam",
-        "title": "[HN] Công Ty Công Nghệ BraveBits Tuyển Dụng Chuyên Viên Digital Marketing Full-time 2021",
-        "hanchot": "01/01/2022",
-        "logo": "data/images/bravebits-bg.png"
-    },
-    "job02": {
-        "hotennguoidang": "Health's Finest Vietnam",
-        "title": "[HN] Công Ty Health's Finest Vietnam Tuyển Dụng Thực Tập Sinh Vẽ Minh Hoạ Full-time 2021",
-        "hanchot": "27/12/2021",
-        "logo": "data/images/healthFin-item.png"
-    },
-    "job03": {
-        "hotennguoidang": "Trần Thị B",
-        "title": "[HCM] Công Ty Nhân Sự Đa Quốc Gia Adecco Tuyển Dụng Support Services Specialist Full-time 2021",
-        "hanchot": "09/01/2022",
-        "logo": "data/images/adecco-item.png"
-    },
-    "job04": {
-        "hotennguoidang": "Glowie App Inc",
-        "title": "[HCM] Công Ty Glowie App Tuyển Dụng Thực Tập Sinh Marketing Full-time 2021",
-        "hanchot": "25/12/2021",
-        "logo": "data/images/glowie-bg.png"
-    },
-    "job05": {
-        "hotennguoidang": "I Like Fitness",
-        "title": "[HN] Công Ty I Like Fitness Tuyển Dụng Nhân Viên Kinh Doanh Full-time 2021",
-        "hanchot": "31/12/2021",
-        "logo": "data/images/ilikefitness-bg.png"
-    },
-    "job06": {
-        "hotennguoidang": "Phạm Thị T",
-        "title": "[HN] Hệ Thống Giáo Dục Hallo English Tuyển Dụng Quản Lý Học Tập Full-time 2021",
-        "hanchot": "20/01/2022",
-        "logo": "data/images/halloenglish-bg.png"
-    },
-    "job07": {
-        "hotennguoidang": "Lê Thảo N",
-        "title": "[HCM] Công Ty Veritas Tuyển Dụng Thực Tập Sinh International Sales & Marketing 2021",
-        "hanchot": "31/12/2021",
-        "logo": "data/images/veritas-bg.png"
-    },
-    "job08": {
-        "hotennguoidang": "Sài Gòn Đậm Đắng",
-        "title": "[HCM] Thương Hiệu Cà Phê Sài Gòn Đậm Đắng Tuyển Dụng Nhân Viên Part-time/ Full-time 2021",
-        "hanchot": "21/12/2021",
-        "logo": "data/images/saigon-bg.png"
-    },
-    "job09": {
-        "hotennguoidang": "Lê Thị N",
-        "title": "[HCM] Công Ty Homecredit Tuyển Dụng Nhân Viên Bán Hàng Qua Điện Thoại Full-time 2021",
-        "hanchot": "31/01/2022",
-        "logo": "data/images/homecredit-bg.png"
-    },
-    "job10": {
-        "hotennguoidang": "195 Global",
-        "title": "[HCM] 195 Global Tuyển Dụng Nhân Viên Tư Vấn & Xử Lý Hồ Sơ Du Học Full-time 2021",
-        "hanchot": "15/01/2022",
-        "logo": "data/images/global-bg.png"
-    },
-    "job11": {
-        "hotennguoidang": "Nguyễn Văn A",
-        "title": "[HCM] Nền Tảng Thương Mại Điện Tử Shopee Tuyển Dụng Nhân Viên Campaign Operations Full-time 2021",
-        "hanchot": "04/01/2022",
-        "logo": "data/images/shopee-item.png"
-    },
-    "job12": {
-        "hotennguoidang": "Nguyễn Thị Ngọc A",
-        "title": "[HN] Công Ty Viet Corset Tuyển Dụng Nhân Viên Content Marketing Full-time 2021",
-        "hanchot": "10/01/2022",
-        "logo": "data/images/vietcorset-bg.png"
-    },
-    "job13": {
-        "hotennguoidang": "Glowie App Inc",
-        "title": "[HCM] Công Ty Glowie App Tuyển Dụng Quản Lý Product Full-time 2021",
-        "hanchot": "20/01/2022",
-        "logo": "data/images/glowie-bg.png"
-    },
-    "job14": {
-        "hotennguoidang": "Nguyễn Văn T",
-        "title": "[HCM] Nền Tảng Thương Mại Điện Tử Shopee Tuyển Dụng Thực Tập Sinh Software Engineer Full-time 2021",
-        "hanchot": "31/12/2021",
-        "logo": "data/images/shopee-item.png"
-    },
-    "job15": {
-        "hotennguoidang": "Veritas Việt Nam",
-        "title": "[HCM] Công Ty Veritas Tuyển Dụng Thực Tập Sinh International Sales & Marketing 2021",
-        "hanchot": "31/12/2021",
-        "logo": "data/images/veritas-bg.png"
-    },
-    "job16": {
-        "hotennguoidang": "Manabie Việt Nam",
-        "title": "[HCM] Công Ty Công Nghệ Giáo Dục Manabie Tuyển Dụng Cố Vấn Học Tập Toán Và Vật Lý Full-time 2021",
-        "hanchot": "31/01/2022",
-        "logo": "data/images/manabie-bg.png"
-    }
-
-}
-
-var listHotPost = {
-    "job17": {
-        "nghenghiep": "Thiết kế đồ họa",
-        "chude": "[HCM] Drviet Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
-        "hanchot": "20/01/2022",
-        "luong": "4 triệu vnđ - 8 triệu vnđ / tháng",
-        "kinhnghiem": "Cần có kinh nghiệm",
-        "diachi": "TP Hồ Chí Minh",
-        "tinhchatcongviec": "Toàn thời gian",
-        "hinhanh": "data/images/drviet-bg.png",
-    },
-    "job18": {
-        "nghenghiep": "Thiết kế đồ họa",
-        "chude": "[HN] Clever Group Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
-        "hanchot": "20/01/2022",
-        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
-        "kinhnghiem": "Không cần kinh nghiệm",
-        "diachi": "Hà Nội",
-        "tinhchatcongviec": "Toàn thời gian",
-        "hinhanh": "data/images/clevergroup-bg.png",
-    },
-    "job19": {
-        "nghenghiep": "Thiết kế đồ họa",
-        "chude": "[HN] Tập Đoàn IDD Tuyển Dụng Nhân Viên Thiết Kế Đồ Họa",
-        "hanchot": "31/12/2021",
-        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
-        "kinhnghiem": "Cần có kinh nghiệm",
-        "diachi": "Hà Nội",
-        "tinhchatcongviec": "Toàn thời gian",
-        "hinhanh": "data/images/idd-bg.png",
-    },
-    "job20": {
-        "nghenghiep": "Kỹ sư phần mềm",
-        "chude": "[HN/HCM] TalentSite Tuyển Dụng Thực Tập Sinh Software Engineer",
-        "hanchot": "27/12/2021",
-        "luong": "8 triệu vnđ - 10 triệu vnđ / tháng",
-        "kinhnghiem": "Không cần kinh nghiệm",
-        "diachi": "Hà Nội/TP Hồ Chí Minh",
-        "tinhchatcongviec": "Toàn thời gian",
-        "hinhanh": "data/images/talentsite-bg.png",
-    },
-    "job21": {
-        "nghenghiep": "Giảng viên IELTS",
-        "chude": "[Online] Trung Tâm Anh Ngữ Pasal Tuyển Dụng Giảng Viên IELTS",
-        "hanchot": "30/12/2021",
-        "luong": "4 trăm vnđ - 6 trăm vnđ / buổi",
-        "kinhnghiem": "Không cần kinh nghiệm",
-        "diachi": "Hà Nội/TP Hồ Chí Minh/Đà Nẵng",
-        "tinhchatcongviec": "Bán thời gian",
-        "hinhanh": "data/images/pasal-bg.png",
-    },
-    "job22": {
-        "nghenghiep": "Nhân viên Marketing",
-        "chude": "[HCM] Saint L'Beau Tuyển Dụng Nhân Viên Marketing",
-        "hanchot": "31/12/2021",
-        "luong": "4 triệu vnđ - 6 triệu vnđ / tháng",
-        "kinhnghiem": "Cần có kinh nghiệm",
-        "diachi": "TP Hồ Chí Minh",
-        "tinhchatcongviec": "Bán thời gian",
-        "hinhanh": "data/images/saint-bg.png",
-    }
-}
-
-
+//navbar ẩn hiện
 var scrollWindow = function () {
     $(window).scroll(function () {
         var $w = $(this),
@@ -233,11 +70,15 @@ function checkRedirectCV() {
     }
 }
 
+function redirectDetails(code) {
+    window.location.href = "details.html?job=" + code;
+}
+
 
 function showBanner() {
     for (let i = 0; i < bannerList.length; i++) {
         $('#carou-inner-banner').append(`<div class="carousel-item${i == 0 ? " active" : ""}"><img src="${bannerList[i].image}" class="d-block w-100 img-banner"></div>`);
-        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="btn-circle ${i == 0 ? " active" : ""}" aria-current="true" aria-label="Slide ${i + 1}"></button>`)
+        $('#btn-carou-banner').append(`<button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" class="btn-circle ${i == 0 ? " active" : ""}" aria-current="true" aria-label="Slide ${i + 1}"></button>`);
     }
 
 }
@@ -245,6 +86,38 @@ function showBanner() {
 showBanner();
 
 // ----------------------------
+
+//load hot job
+function loadHotJob() {
+    for (let i = 0; i < Object.keys(listHotPost).length; i++) {
+        var index = i + Object.keys(listJob).length + 1;
+        $('#customers-testimonials').append(`<div class="post-item-hot ftco-animate">
+                                    <div class="contain-item card-item">
+                                        <div class="head-post">
+                                            <div class="image-logo" style="background-image: url('${listHotPost["job" + index].brand}'); background-size: contain;"></div>
+                                        </div>
+                                        <p class="vacancies">${listHotPost["job" + index].nghenghiep}</p>
+                                        <span class="detail-vac">${listHotPost["job" + index].title}</span>
+                                        <div class="end-date"><span class="txtEnd-date">${listHotPost["job" + index].hanchot}</span></div>
+                                        <div class="info-post">
+                                            <p><span class="icon-post icon-money"></span>${listHotPost["job" + index].luong}</p>
+                                            <p><span class="icon-post icon-exp"></span>${listHotPost["job" + index].kinhnghiem}</p>
+                                            <p><span class="icon-post icon-locate"></span>${listHotPost["job" + index].diachi}</p>
+                                            <p><span class="icon-post icon-time"></span>${listHotPost["job" + index].tinhchatcongviec}</p>
+                                        </div>
+
+                                        <div class="footer-post">
+                                            <button class="btn-save btn-circle" data-bs-toggle="tooltip"
+                                                title="Lưu bài viết" onclick="savePost('${"job" + index}')"></button>
+                                            <a href="javascript:redirectDetails('${"job" + index}')"><button class="btn-seeDetail btn-radCircle btn-blue">Detail</button></a>
+                                        </div>
+                                    </div>
+                                </div>`);
+    }
+}
+
+loadHotJob();
+
 
 $('#customers-testimonials').owlCarousel({
     loop: true,
@@ -257,7 +130,7 @@ $('#customers-testimonials').owlCarousel({
     smartSpeed: 300,
     responsive: {
         0: {
-            items: 1
+            items: 1.5
         },
         460: {
             items: 2
@@ -277,24 +150,22 @@ $('#customers-testimonials').owlCarousel({
     }
 });
 
-
 //load job
-
 window.addEventListener('scroll', () => {
     setTimeout(function () {
         if (window.scrollY + window.innerHeight >=
             document.documentElement.scrollHeight) {
-            loadJob();
+            loadJob('listpost');
             contentWayPoint();
         }
     }, 2000);
 });
 
-function loadJob() {
+function loadJob(id) {
     for (let i = 0; i < Object.keys(listJob).length; i++) {
         var index = (i + 1) < 10 ? "0" + (i + 1) : i + 1;
 
-        $('#listpost .container-list-post .row').append(`<div class="col-md-6 col-lg-3 ftco-animate">
+        $('#' + id + ' .container-list-post .row').append(`<div class="col-md-6 col-lg-3 col-sm-12 ftco-animate">
             <div class="post-item card-item" id="${"job" + index}">
                 <div class="item-post-header">
                     <div class="avatar-user btn-circle"></div>
@@ -317,7 +188,7 @@ function loadJob() {
         </div>`);
     }
 
-    // SHOW ICON SAVE
+    // hiển thị nút lưu bài viết
 
     $('.post-item').mouseenter(function () {
         $(this).children('.item-post-footer').addClass('icon-save-show');
@@ -333,12 +204,15 @@ function loadJob() {
         $('.navbar-brand .move-brand').removeClass('move-re');
     });
 
+    //chuyển đến trang chi tiết
     $('.post-item .item-post-header, .post-item .item-post-main, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
-        window.location.href = `details.html?job=${this.id}`;
+        window.location.href = `details.html?job=${this.parentElement.id}`;
     });
 
 }
-loadJob();
+
+loadJob('listpost-section');
+loadJob('listpost');
 
 // ANIMATE
 
@@ -367,12 +241,7 @@ var contentWayPoint = function () {
 };
 contentWayPoint();
 
-// function eventFunc() {
-//     $('.post-item').click(redirectDetails());
-// }
-
-// SHOW ICON SAVE
-
+// hiện icon lưu bài viết
 $('.post-item').mouseenter(function showSave() {
     $(this).children('.item-post-footer').addClass('icon-save-show');
 
@@ -390,7 +259,7 @@ $('.post-item').mouseleave(function hiddenSave() {
 
 // chuyển đến trang chi tiết
 $('.post-item .item-post-header, .post-item .item-post-main, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
-    window.location.href = `details.html?job=${this.id}`;
+    window.location.href = `details.html?job=${this.parentElement.id}`;
 });
 
 // chuyển đến trang đăng nhập
@@ -613,9 +482,9 @@ function showListSave() {
 
     for (let i = 0; i < localStorage.length; i++) {
         $('tbody#list-save').append(`<tr>
-                        <td rowspan="2" style="height: 95px; width: fit-content;"><img
+                        <td rowspan="2" style="height: 95px; width: fit-content; cursor: pointer;" onclick="redirectDetails('${localStorage.key(i)}')"><img
                                 src="${JSON.parse(localStorage[localStorage.key(i)]).logo}" alt="Ảnh bài viết" height="100%"></td>
-                        <td colspan="2" style="width: max-content;"><b>${JSON.parse(localStorage[localStorage.key(i)]).title}</b></td>
+                        <td colspan="2" style="width: max-content; cursor: pointer;" onclick="redirectDetails('${localStorage.key(i)}')"><b>${JSON.parse(localStorage[localStorage.key(i)]).title}</b></td>
                         <td rowspan="2" class="text-center" style="width: 50px; height: 100%; line-height: 70px;"><i class="fas fa-trash-alt icon-red del-save" onclick="removeItemSave('${localStorage.key(i)}')"></i></td>
                     </tr>
                     <tr>
@@ -641,6 +510,31 @@ function removeItemSave(code) {
 window.onstorage = () => {
     showListSave();
 };
+
+function showDetails() {
+    var code = new URLSearchParams(window.location.search).get("job");
+
+    if (listJob[code] !== undefined){
+        $('.avt-cty .name-cty').html("&nbsp;"+listJob[code].hotennguoidang);
+        $('#logo-cty').attr('src', listJob[code].logo);
+        $('.title-td h1').html(listJob[code].title);
+        $('.main-gthieu-cty .gt-cty img').attr('src', listJob[code].logo);
+        $('#hanchot').html(`<b>Hạn cuối:</b> 23:59 ngày ${listJob[code].hanchot}`);
+        $('#salary').html("Thỏa thuận");
+    }
+    else{
+        $('.avt-cty .name-cty').html("&nbsp;"+listHotPost[code].hotennguoidang);
+        $('#logo-cty').attr('src', listHotPost[code].logo);
+        $('.title-td h1').html(listHotPost[code].title);
+        $('.main-gthieu-cty .gt-cty img').attr('src', listHotPost[code].logo);
+
+        $('#tinhchat-cv').html(listHotPost[code].tinhchatcongviec);
+        $('#kinhnghiem-cv').html(listHotPost[code].kinhnghiem);
+        $('#diadiem-cv').html(listHotPost[code].diachi);
+        $('#hanchot').html(`<b>Hạn cuối:</b> 23:59 ngày ${listHotPost[code].hanchot}`);
+        $('#salary').html(listHotPost[code].luong);
+    }
+}
 
 // LOADED
 setTimeout(function () { $('body').addClass('loaded'); }, 300);
