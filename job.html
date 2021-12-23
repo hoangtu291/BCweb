@@ -21,27 +21,22 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/job.css">
-    <title>Tuyển dụng</title>
+    <!-- <link rel="stylesheet" href="css/job.css"> -->
+    <link rel="shortcut icon" type="image/svg" href="data/icon/logo-icon.svg">
+    <title>Finder - Tuyển dụng</title>
 </head>
 
 <body>
 
     <!-- LOADER -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-    </div>
+    <!-- <div class="loading"></div> -->
 
     <header>
         <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
             <div class="main-nav">
                 <div class="nav-left">
-                    <!-- <div class="nav-logo logo btn-circle" id="logo-brand"></div> -->
                     <a class="navbar-brand brand-name" href="index.html" style="font-size: 28px;">
                         find<div class="move-brand">er</div>
-                        <!-- <i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i> -->
-                        <!-- <div class="round-brand btn-circle"><i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i></div> -->
-                        <!-- Name <span>web</span> -->
                     </a>
                 </div>
 
@@ -51,7 +46,7 @@
                         <div class="nav-item active"><a href="job.html" class="nav-link">Tuyển dụng</a></div>
                         <div class="nav-item"><a href="javascript:checkRedirectCV();" class="nav-link">Tạo CV</a></div>
                         <div class="nav-right">
-                            <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
+                            <button class="btn-signin btn-blue" id="btn-signin">Đăng nhập</button>
 
                             <div class="dropdown d-none" id="nav-account">
                                 <div class="dropbtn"><a href="javascript:void(0);"></a><i
@@ -59,13 +54,10 @@
                                 </div>
                                 <div class="dropdown-content">
                                     <ul>
-                                        <li>Link 1</li>
-                                        <li>Link 2</li>
+                                        <li onclick="redirectNone()">Trang cá nhân</li>
+                                        <li onclick="redirectNone()">Cài đặt</li>
                                         <li onclick="logOut()">Đăng xuất</li>
                                     </ul>
-                                    <!-- <a href="#"></a>
-                                            <a href="#">Link 2</a>
-                                            <a href="#" onclick="logOut()"></a> -->
                                 </div>
                             </div>
                         </div>
@@ -94,96 +86,21 @@
                         <button type="submit">Tìm kiếm</button>
                     </div>
                 </div>
-                <div class="loc-tim-kiem">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="loaihinh" id="loaihinh">
-                                <option value="loaihinh">-- Loại hình --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="ctytrong">Công ty Việt Nam</option>
-                                <option value="ctyngoai">Công ty nước ngoài</option>
-                                <option value="khoinghiep">Khởi nghiệp - Startup</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="diadiem" id="diadiem">
-                                <option value="diadiem">-- Địa điểm --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="tphcm">Thành phố Hồ Chí Minh</option>
-                                <option value="cantho">Cần Thơ</option>
-                                <option value="danang">Đà Nẵng</option>
-                                <option value="baclieu">Bạc Liêu</option>
-                                <option value="soctrang">Sóc Trăng</option>
-                                <option value="nuocngoai">Nước ngoài</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="tccv" id="tccv">
-                                <option value="tccv">-- Tính chất công việc --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="bantg">Bán thời gian</option>
-                                <option value="toantg">Toàn thời gian</option>
-                                <option value="thuctap">Thực tập</option>
-                                <option value="tinhnguyen">Tình nguyện</option>
-                                <option value="online">Online</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="chuyenmon" id="chuyenmon">
-                                <option value="chuyenmon">-- Chuyên môn --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="it">Lập trình</option>
-                                <option value="marketing">Maketing, Truyền thông, PR</option>
-                                <option value="hanhchinh">Hành chính, Nhân sự</option>
-                                <option value="baochi">Báo chí, Truyền hình</option>
-                                <option value="ketoan">Kế toán, Kiểm toán</option>
-                                <option value="tk">Thiết kế</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="mucluong" id="mucluong">
-                                <option value="mucluong">-- Mức lương --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="thoathuan">Thỏa thuận</option>
-                                <option value="khongluong">Không lương</option>
-                                <option value="duoi10tr">Dưới 10 triệu đồng</option>
-                                <option value="10-15tr">Từ 10 triệu đồng đến 15 triệu đồng</option>
-                                <option value="tren15tr">Trên 15 triệu đồng</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-2">
-                            <select name="kinhnghiem" id="kinhnghiem">
-                                <option value="kinhnghiem">-- Kinh nghiệm --</option>
-                                <option value="all">Tất cả</option>
-                                <option value="khong-kinh-nghiem">Không cần kinh nghiệm - Đừng lo, bạn sẽ đào tạo
-                                    bạn từ đầu!</option>
-                                <option value="co-kinh-nghiem">Yêu cầu ứng viên phải có kinh nghiệm</option>
-                                <option value="khac">Khác</option>
-                            </select>
-                        </div>
-
-                        <div class="loc">
-                            <button type="submit"><i class="fas fa-filter me-2"></i>LỌC</button>
-                        </div>
-                    </div>
-
-                    <!-- <table>
-                        <tr>
-                            <td><select name="loaihinh" id="loaihinh">
+                <div class="around-loc">
+                    <div class="loc-tim-kiem">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="loaihinh" id="loaihinh">
                                     <option value="loaihinh">-- Loại hình --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="ctytrong">Công ty Việt Nam</option>
                                     <option value="ctyngoai">Công ty nước ngoài</option>
                                     <option value="khoinghiep">Khởi nghiệp - Startup</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                            <td><select name="diadiem" id="diadiem">
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="diadiem" id="diadiem">
                                     <option value="diadiem">-- Địa điểm --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="hanoi">Hà Nội</option>
@@ -194,8 +111,10 @@
                                     <option value="soctrang">Sóc Trăng</option>
                                     <option value="nuocngoai">Nước ngoài</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                            <td><select name="tccv" id="tccv">
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="tccv" id="tccv">
                                     <option value="tccv">-- Tính chất công việc --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="bantg">Bán thời gian</option>
@@ -204,8 +123,10 @@
                                     <option value="tinhnguyen">Tình nguyện</option>
                                     <option value="online">Online</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                            <td><select name="chuyenmon" id="chuyenmon">
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="chuyenmon" id="chuyenmon">
                                     <option value="chuyenmon">-- Chuyên môn --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="it">Lập trình</option>
@@ -215,8 +136,10 @@
                                     <option value="ketoan">Kế toán, Kiểm toán</option>
                                     <option value="tk">Thiết kế</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                            <td><select name="mucluong" id="mucluong">
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="mucluong" id="mucluong">
                                     <option value="mucluong">-- Mức lương --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="thoathuan">Thỏa thuận</option>
@@ -225,20 +148,24 @@
                                     <option value="10-15tr">Từ 10 triệu đồng đến 15 triệu đồng</option>
                                     <option value="tren15tr">Trên 15 triệu đồng</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                            <td><select name="kinhnghiem" id="kinhnghiem">
+                                </select>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <select name="kinhnghiem" id="kinhnghiem">
                                     <option value="kinhnghiem">-- Kinh nghiệm --</option>
                                     <option value="all">Tất cả</option>
                                     <option value="khong-kinh-nghiem">Không cần kinh nghiệm - Đừng lo, bạn sẽ đào tạo
                                         bạn từ đầu!</option>
                                     <option value="co-kinh-nghiem">Yêu cầu ứng viên phải có kinh nghiệm</option>
                                     <option value="khac">Khác</option>
-                                </select></td>
-                        </tr>
-                    </table> -->
-                    <!-- <div class="loc">
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="loc">
                         <button type="submit"><i class="fas fa-filter me-2"></i>LỌC</button>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>

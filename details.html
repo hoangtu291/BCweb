@@ -4,56 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Satisfy&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/chitiet.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Chi tiết</title>
+    <link rel="shortcut icon" type="image/svg" href="data/icon/logo-icon.svg">
+    <title>Finder - Chi tiết</title>
 </head>
 
 <body onload="showDetails()">
 
     <!-- LOADER -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-    </div>
+    <!-- <div class="loading"></div> -->
 
     <header>
         <nav class="navbar navbar-expand-sm my_navbar my-navbar-light" id="ftco-navbar">
             <div class="main-nav">
                 <div class="nav-left">
-                    <!-- <div class="nav-logo logo btn-circle" id="logo-brand"></div> -->
                     <a class="navbar-brand brand-name" href="index.html" style="font-size: 28px;">
                         finder
-                        <!-- <i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i> -->
-                        <!-- <div class="round-brand btn-circle"><i class="fas fa-arrows-alt-h" style="font-size: 15px; transform: scaleX(1.6);"></i></div> -->
-                        <!-- Name <span>web</span> -->
                     </a>
                 </div>
-    
+
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <div class="navbar-nav ml-auto nav-center">
                         <div class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></div>
                         <div class="nav-item"><a href="job.html" class="nav-link">Tuyển dụng</a></div>
                         <div class="nav-item"><a href="javascript:checkRedirectCV();" class="nav-link">Tạo CV</a></div>
                         <div class="nav-right">
-                            <button class="btn-signin btn-blue" id="btn-signin" onclick="">Đăng nhập</button>
-    
+                            <button class="btn-signin btn-blue" id="btn-signin">Đăng nhập</button>
+
                             <div class="dropdown d-none" id="nav-account">
-                                <div class="dropbtn"><a href="javascript:void(0);"></a><i class="fas fa-user-circle"></i>
+                                <div class="dropbtn"><a href="javascript:void(0);"></a><i
+                                        class="fas fa-user-circle"></i>
                                 </div>
                                 <div class="dropdown-content">
                                     <ul>
-                                        <li>Link 1</li>
-                                        <li>Link 2</li>
+                                        <li onclick="redirectNone()">Trang cá nhân</li>
+                                        <li onclick="redirectNone()">Cài đặt</li>
                                         <li onclick="logOut()">Đăng xuất</li>
                                     </ul>
                                     <!-- <a href="#"></a>
@@ -74,169 +74,198 @@
         </nav>
     </header>
 
-    <main style="width: 1024px; margin: 0 auto;">
-        <div class="avt-cty">
-            <img alt="avt" id="logo-cty" style="border: 1px solid #ccc">
-            <a href="#" class="name-cty"></a>
-            <a href="#" class="name-sk">&nbsp;@Tuyển dụng</a>
-        </div>
-        <div class="title-td tdung">
-            <!-- <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1415797607/pvx0iuwh98toz4sqvu8l.png" alt="logo"> -->
-            <h1></h1>
-        </div>
-        <div class="main-gthieu-cty tdung">
-            <div class="icon-title">
-                <img src="https://ybox.vn/statics/images/company.png" alt="icon-cty" class="icon">
-                <h2>GIỚI THIỆU CÔNG TY</h2>
+    <main style="width: 100%;">
+        <div class="container-details" style="max-width: 1024px;  margin: 0 auto;">
+            <div class="avt-cty">
+                <img alt="avt" id="logo-cty" style="border: 1px solid #ccc">
+                <a href="#" class="name-cty"></a>
+                <a href="#" class="name-sk">&nbsp;@Tuyển dụng</a>
             </div>
-            <div class="gt-cty">
-                <img alt="cty">
-                <p>
-                    Thành lập từ năm 2008, BraveBits là một trong những startup đầu tiên của Việt Nam thành công trong
-                    việc
-                    phát triển sản phẩm công nghệ trên nền tảng mã nguồn mở cho hàng trăm nghìn khách hàng trên thị
-                    trường
-                    quốc tế. Công ty là ngôi nhà chung thu hút nhiều bạn trẻ say mê với lĩnh vực lập trình, thiết kế,
-                    marketing - cùng có hoài bão tạo ra những sản phẩm công nghệ mang tính đột phá cho người dùng trên
-                    toàn
-                    cầu. Điều luôn thúc đẩy chúng tôi chính là niềm đam mê cháy bỏng đối với công việc, những công nghệ
-                    không ngừng thay đổi và yêu cầu khắt khe về chất lượng sản phẩm từ phía cộng đồng khách hàng.</p>
+            <div class="title-td tdung">
+                <!-- <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1415797607/pvx0iuwh98toz4sqvu8l.png" alt="logo"> -->
+                <h1></h1>
             </div>
-        </div>
-        <div class="main-gthieu-cviec tdung">
-            <h2>CHUYÊN VIÊN DIGITAL MARKETING</h2>
-            <div class="so-luoc-cviec">
-                <div class="so-luoc-cviec1 slcv1">
-                    <img src="https://static.ybox.vn/2020/10/3/1603251719446-tinh%20chat%20cong%20viec.png" alt="tc"
-                        class="icon-gt">
-                    <h3><b>Tính chất công việc:</b></h3>
-                    <h3 id="tinhchat-cv">Toàn thời gian</h3>
+            <div class="main-gthieu-cty tdung">
+                <div class="icon-title">
+                    <img src="https://ybox.vn/statics/images/company.png" alt="icon-cty" class="icon">
+                    <h2>GIỚI THIỆU CÔNG TY</h2>
                 </div>
-                <div class="so-luoc-cviec2 slcv1">
-                    <img src="https://static.ybox.vn/2020/10/3/1603251782758-chuyen%20mon.png" alt="cm" class="icon-gt">
-                    <h3><b>Chuyên môn:</b></h3>
-                    <h3>Marketing, Truyền Thông, PR</h3>
-                </div>
-                <div class="so-luoc-cviec3 slcv1">
-                    <img src="https://static.ybox.vn/2020/10/3/1603251752344-dia%20diem.png" alt="dd" class="icon-gt">
-                    <h3><b>Địa điểm:</b></h3>
-                    <h3 id="diadiem-cv">Hà Nội</h3>
-                </div>
-                <div class="so-luoc-cviec4 slcv1">
-                    <img src="https://static.ybox.vn/2020/10/3/1603251772800-kinh%20nghiem.png" alt="kn"
-                        class="icon-gt">
-                    <h3><b>Kinh nghiệm:</b></h3>
-                    <h3 id="kinhnghiem-cv">Không cần kinh nghiệm - Đừng lo! Chúng tôi sẽ đào tạo bạn từ đầu. Có kinh nghiệm là điểm cộng!</h3>
-                </div>
-                <div class="so-luoc-cviec5 slcv1">
-                    <img src="https://static.ybox.vn/2020/10/3/1603251682681-muc%20luong.png" alt="ml" class="icon-gt">
-                    <h3><b>Mức lương:</b></h3>
-                    <h3 id="salary"></h3>
-                </div>
-            </div>
-        </div>
-        <div class="mo-ta-cviec tdung">
-            <div class="icon-title">
-                <img src="	https://ybox.vn/statics/images/mota.png" alt="mota" class="icon">
-                <h2>MÔ TẢ CÔNG VIỆC</h2>
-            </div>
-            <p>
-                Bạn sẽ có cơ hội tham gia vào một số trong hơn 30 hoạt động marketing bao trùm toàn bộ hành trình khách
-                hàng theo mô hình AARRR. <b>Một số hoạt động điển hình:</b>
-            <ul>
-                <li>Nghiên cứu & phân tích thị trường để tìm nhu cầu khách hàng và đối tác.</li>
-                <li>Thảo luận, tìm kiếm ý tưởng và thực thi các chương trình tìm kiếm khách hàng và đối tác mới.</li>
-                <li>Chăm sóc khách hàng & đối tác qua email / chat.</li>
-                <li>Sản xuất tài liệu sử dụng sản phẩm với nhiều định dạng khác nhau.</li>
-                <li>Phát triển thương hiệu trên các mạng xã hội.</li>
-                <li>Sản xuất nội dung quảng bá sản phẩm của công ty trên các kênh truyền thông khác nhau.</li>
-                <li>Giới thiệu, trình diễn sản phẩm cho các khách hàng và đối tác.</li>
-                <li>Giới thiệu, trình diễn sản phẩm cho các khách hàng và đối tác.</li>
-                <li>Nghiên cứu và triển khai đưa sản phẩm vào các thị trường ngách.</li>
-            </ul>
-            <p>
-                Địa điểm làm việc: Lô 08 L2 Tòa A1 Ecolife Capitol 58 Tố Hữu, phường Mễ Trì, quận Nam Từ Liêm, Hà Nội.
-            </p>
-            </p>
-        </div>
-        <div class="ycau-uvien tdung">
-            <div class="icon-title">
-                <img src="https://ybox.vn/statics/images/waiter.png" alt="uv" class="icon">
-                <h2>YÊU CẦU ỨNG VIÊN</h2>
-            </div>
-            <p>
-                <b>BraveBits không yêu cầu kinh nghiệm cao, nhưng một số kỹ năng tối thiểu cần phải có như sau:</b>
-            <ul>
-                <li>Tiếng Anh đọc, viết thành thạo (tối thiểu IELTS 6.5 hoặc tương đương).</li>
-                <li>Kỹ năng làm việc và quản lý công việc độc lập và chủ động.</li>
-                <li>Kỹ năng làm việc nhóm tốt. Thân thiện, cởi mở.</li>
-                <li>Sẵn sàng học hỏi ở những lĩnh vực không thuộc chuyên môn nhưng phục vụ cho công việc.</li>
-                <li>Tính kiên trì, cần cù, chăm chỉ.</li>
-                <li>Không ngại thất bại, nhận sai.</li>
-            </ul>
-            <p><b>Sẽ là 1 lợi thế nếu bạn có những thứ sau:</b></p>
-            <ul>
-                <li>“Tư duy số liệu”, làm bất kỳ điều gì cũng nghĩ đến sự tác động của việc mình làm thông qua những chỉ
-                    số.</li>
-                <li>Kinh nghiệm trong marketing truyền thống và bán hàng.</li>
-                <li>Kinh nghiệm làm việc trong ngành thương mại điện tử quốc tế.</li>
-                <li>Kinh nghiệm làm việc trong ngành phần mềm, đặc biệt liên quan đến Shopify.</li>
-                <li>Kinh nghiệm chăm sóc khách hàng và đối tác.</li>
-                <li>Được đào tạo ở nước ngoài.</li>
-            </ul>
-            </p>
-        </div>
-        <div class="csach-dngo tdung">
-            <div class="icon-title">
-                <img src="https://ybox.vn/statics/images/growth.png" alt="csdn" class="icon">
-                <h2>CHÍNH SÁCH ĐÃI NGỘ</h2>
-            </div>
-            <p>
-                <b>Đầu tiên là bạn sẽ học được rất nhiều:</b>
-            <ul>
-                <li>Tăng hiểu biết về ngành thương mại điện tử quốc tế và công nghệ thông tin.</li>
-                <li>Tăng kỹ năng nghiên cứu và học tập.</li>
-                <li>Tăng kỹ năng giao tiếp và thuyết trình.</li>
-                <li>Tăng cả 4 kỹ năng tiếng Anh.</li>
-                <li>Tăng tính chuyên nghiệp trong tác phong làm việc.</li>
-                <li>Học cách xác định và đo lường chỉ số bằng Google Analytics từ cơ bản đến nâng cao.</li>
-                <li>Tăng hiểu biết về tiếp thị số và các công nghệ hỗ trợ.</li>
-            </ul>
-            <p><b>Ngoài ra bạn sẽ được hưởng một số chính sách đặc biệt như:</b></p>
-            <ul>
-                <li>Ăn trưa “homemade” miễn phí tại văn phòng.</li>
-                <li>Đăng ký làm remote có tính full lương.</li>
-                <li>Chính sách lương, thưởng cạnh tranh, minh bạch và rõ ràng. Nhận lương 2 lần / tháng.</li>
-            </ul>
-            </p>
-        </div>
-        <div class="cthuc-utuyen tdung">
-            <div class="icon-title">
-                <img src="https://ybox.vn/statics/images/resume.png" alt="cthuc" class="icon">
-                <h2>CÁCH THỨC ỨNG TUYỂN</h2>
-            </div>
-            <p>
-            <ul>
-                <li><b>Ứng tuyển qua nút ỨNG TUYỂN ONLINE dưới đây.</b></li>
-                <li id="hanchot"></li>
-                <li>
-                    <b>Lưu ý:</b> Do hạn chế về mặt thời gian, chúng tôi có thể sẽ chỉ phản hồi kết quả ứng tuyển qua email cho
-                    các ứng viên được chọn. Trong và sau khi ứng tuyển, vui lòng thường xuyên kiểm tra cả <b>hòm thư Spam
-                    hoặc Promotions (Quảng cáo)</b> để không bỏ sót bất cứ thông báo nào từ chúng tôi.
-                </li>
-            </ul>
-            </p>
-        </div>
-        <div class="nut-utuyen">
-            <input type="submit" value="ỨNG TUYỂN ONLINE">
-        </div>
+                <div class="gt-cty">
+                    <div class="row">
+                        <div class="col-md-6 image-title"><img alt="cty" width="100%"></div>
 
-        <!-- BADGE -->
-        <button type="button" class="btn btn-primary position-fixed btn-radCircle" id="badge-listSave" data-bs-toggle="tooltip" title="Bài viết đã lưu">
-            <i class="fas fa-archive"></i>
-            <span class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle" id="badge-numSaved">
-            </span>
-        </button>
+                        <div class="col-md-6"><p>
+                            Thành lập từ năm 2008, BraveBits là một trong những startup đầu tiên của Việt Nam thành công
+                            trong
+                            việc
+                            phát triển sản phẩm công nghệ trên nền tảng mã nguồn mở cho hàng trăm nghìn khách hàng trên
+                            thị
+                            trường
+                            quốc tế. Công ty là ngôi nhà chung thu hút nhiều bạn trẻ say mê với lĩnh vực lập trình,
+                            thiết
+                            kế,
+                            marketing - cùng có hoài bão tạo ra những sản phẩm công nghệ mang tính đột phá cho người
+                            dùng
+                            trên
+                            toàn
+                            cầu. Điều luôn thúc đẩy chúng tôi chính là niềm đam mê cháy bỏng đối với công việc, những
+                            công
+                            nghệ
+                            không ngừng thay đổi và yêu cầu khắt khe về chất lượng sản phẩm từ phía cộng đồng khách
+                            hàng.
+                        </p></div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="main-gthieu-cviec tdung">
+                <h2>CHUYÊN VIÊN DIGITAL MARKETING</h2>
+                <div class="so-luoc-cviec">
+                    <div class="so-luoc-cviec1 slcv1">
+                        <img src="https://static.ybox.vn/2020/10/3/1603251719446-tinh%20chat%20cong%20viec.png" alt="tc"
+                            class="icon-gt">
+                        <h3><b>Tính chất công việc:</b></h3>
+                        <h3 id="tinhchat-cv">Toàn thời gian</h3>
+                    </div>
+                    <div class="so-luoc-cviec2 slcv1">
+                        <img src="https://static.ybox.vn/2020/10/3/1603251782758-chuyen%20mon.png" alt="cm"
+                            class="icon-gt">
+                        <h3><b>Chuyên môn:</b></h3>
+                        <h3>Marketing, Truyền Thông, PR</h3>
+                    </div>
+                    <div class="so-luoc-cviec3 slcv1">
+                        <img src="https://static.ybox.vn/2020/10/3/1603251752344-dia%20diem.png" alt="dd"
+                            class="icon-gt">
+                        <h3><b>Địa điểm:</b></h3>
+                        <h3 id="diadiem-cv">Hà Nội</h3>
+                    </div>
+                    <div class="so-luoc-cviec4 slcv1">
+                        <img src="https://static.ybox.vn/2020/10/3/1603251772800-kinh%20nghiem.png" alt="kn"
+                            class="icon-gt">
+                        <h3><b>Kinh nghiệm:</b></h3>
+                        <h3 id="kinhnghiem-cv">Không cần kinh nghiệm - Đừng lo! Chúng tôi sẽ đào tạo bạn từ đầu. Có kinh
+                            nghiệm là điểm cộng!</h3>
+                    </div>
+                    <div class="so-luoc-cviec5 slcv1">
+                        <img src="https://static.ybox.vn/2020/10/3/1603251682681-muc%20luong.png" alt="ml"
+                            class="icon-gt">
+                        <h3><b>Mức lương:</b></h3>
+                        <h3 id="salary"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="mo-ta-cviec tdung">
+                <div class="icon-title">
+                    <img src="	https://ybox.vn/statics/images/mota.png" alt="mota" class="icon">
+                    <h2>MÔ TẢ CÔNG VIỆC</h2>
+                </div>
+                <p>
+                    Bạn sẽ có cơ hội tham gia vào một số trong hơn 30 hoạt động marketing bao trùm toàn bộ hành trình
+                    khách
+                    hàng theo mô hình AARRR. <b>Một số hoạt động điển hình:</b>
+                <ul>
+                    <li>Nghiên cứu & phân tích thị trường để tìm nhu cầu khách hàng và đối tác.</li>
+                    <li>Thảo luận, tìm kiếm ý tưởng và thực thi các chương trình tìm kiếm khách hàng và đối tác mới.
+                    </li>
+                    <li>Chăm sóc khách hàng & đối tác qua email / chat.</li>
+                    <li>Sản xuất tài liệu sử dụng sản phẩm với nhiều định dạng khác nhau.</li>
+                    <li>Phát triển thương hiệu trên các mạng xã hội.</li>
+                    <li>Sản xuất nội dung quảng bá sản phẩm của công ty trên các kênh truyền thông khác nhau.</li>
+                    <li>Giới thiệu, trình diễn sản phẩm cho các khách hàng và đối tác.</li>
+                    <li>Giới thiệu, trình diễn sản phẩm cho các khách hàng và đối tác.</li>
+                    <li>Nghiên cứu và triển khai đưa sản phẩm vào các thị trường ngách.</li>
+                </ul>
+                <p>
+                    Địa điểm làm việc: Lô 08 L2 Tòa A1 Ecolife Capitol 58 Tố Hữu, phường Mễ Trì, quận Nam Từ Liêm, Hà
+                    Nội.
+                </p>
+                </p>
+            </div>
+            <div class="ycau-uvien tdung">
+                <div class="icon-title">
+                    <img src="https://ybox.vn/statics/images/waiter.png" alt="uv" class="icon">
+                    <h2>YÊU CẦU ỨNG VIÊN</h2>
+                </div>
+                <p>
+                    <b>BraveBits không yêu cầu kinh nghiệm cao, nhưng một số kỹ năng tối thiểu cần phải có như sau:</b>
+                <ul>
+                    <li>Tiếng Anh đọc, viết thành thạo (tối thiểu IELTS 6.5 hoặc tương đương).</li>
+                    <li>Kỹ năng làm việc và quản lý công việc độc lập và chủ động.</li>
+                    <li>Kỹ năng làm việc nhóm tốt. Thân thiện, cởi mở.</li>
+                    <li>Sẵn sàng học hỏi ở những lĩnh vực không thuộc chuyên môn nhưng phục vụ cho công việc.</li>
+                    <li>Tính kiên trì, cần cù, chăm chỉ.</li>
+                    <li>Không ngại thất bại, nhận sai.</li>
+                </ul>
+                <p><b>Sẽ là 1 lợi thế nếu bạn có những thứ sau:</b></p>
+                <ul>
+                    <li>“Tư duy số liệu”, làm bất kỳ điều gì cũng nghĩ đến sự tác động của việc mình làm thông qua những
+                        chỉ
+                        số.</li>
+                    <li>Kinh nghiệm trong marketing truyền thống và bán hàng.</li>
+                    <li>Kinh nghiệm làm việc trong ngành thương mại điện tử quốc tế.</li>
+                    <li>Kinh nghiệm làm việc trong ngành phần mềm, đặc biệt liên quan đến Shopify.</li>
+                    <li>Kinh nghiệm chăm sóc khách hàng và đối tác.</li>
+                    <li>Được đào tạo ở nước ngoài.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="csach-dngo tdung">
+                <div class="icon-title">
+                    <img src="https://ybox.vn/statics/images/growth.png" alt="csdn" class="icon">
+                    <h2>CHÍNH SÁCH ĐÃI NGỘ</h2>
+                </div>
+                <p>
+                    <b>Đầu tiên là bạn sẽ học được rất nhiều:</b>
+                <ul>
+                    <li>Tăng hiểu biết về ngành thương mại điện tử quốc tế và công nghệ thông tin.</li>
+                    <li>Tăng kỹ năng nghiên cứu và học tập.</li>
+                    <li>Tăng kỹ năng giao tiếp và thuyết trình.</li>
+                    <li>Tăng cả 4 kỹ năng tiếng Anh.</li>
+                    <li>Tăng tính chuyên nghiệp trong tác phong làm việc.</li>
+                    <li>Học cách xác định và đo lường chỉ số bằng Google Analytics từ cơ bản đến nâng cao.</li>
+                    <li>Tăng hiểu biết về tiếp thị số và các công nghệ hỗ trợ.</li>
+                </ul>
+                <p><b>Ngoài ra bạn sẽ được hưởng một số chính sách đặc biệt như:</b></p>
+                <ul>
+                    <li>Ăn trưa “homemade” miễn phí tại văn phòng.</li>
+                    <li>Đăng ký làm remote có tính full lương.</li>
+                    <li>Chính sách lương, thưởng cạnh tranh, minh bạch và rõ ràng. Nhận lương 2 lần / tháng.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="cthuc-utuyen tdung">
+                <div class="icon-title">
+                    <img src="https://ybox.vn/statics/images/resume.png" alt="cthuc" class="icon">
+                    <h2>CÁCH THỨC ỨNG TUYỂN</h2>
+                </div>
+                <p>
+                <ul>
+                    <li><b>Ứng tuyển qua nút ỨNG TUYỂN ONLINE dưới đây.</b></li>
+                    <li id="hanchot"></li>
+                    <li>
+                        <b>Lưu ý:</b> Do hạn chế về mặt thời gian, chúng tôi có thể sẽ chỉ phản hồi kết quả ứng tuyển
+                        qua email cho
+                        các ứng viên được chọn. Trong và sau khi ứng tuyển, vui lòng thường xuyên kiểm tra cả <b>hòm thư
+                            Spam
+                            hoặc Promotions (Quảng cáo)</b> để không bỏ sót bất cứ thông báo nào từ chúng tôi.
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="nut-utuyen">
+                <input type="submit" value="ỨNG TUYỂN ONLINE">
+            </div>
+
+            <!-- BADGE -->
+            <button type="button" class="btn btn-primary position-fixed btn-radCircle" id="badge-listSave"
+                data-bs-toggle="tooltip" title="Bài viết đã lưu">
+                <i class="fas fa-archive"></i>
+                <span
+                    class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle"
+                    id="badge-numSaved">
+                </span>
+            </button>
+        </div>
     </main>
 
     <footer id="footer-section">
@@ -245,10 +274,8 @@
                 <div class="contain-footer col-md-3">
                     <div class="ftco-footer-widget mb-4">
                         <a href="index.html" class="brand-name brand-large">finder</a>
-                        <p class="text-footer">Lorem Ipsum chỉ đơn giản là văn bản giả của ngành in ấn và sắp
-                            chữ. Lorem Ipsum đã
-                            trở thành văn bản giả tiêu chuẩn của
-                            ngành kể từ những năm 1500</p>
+                        <p class="text-footer">Find a job and achieve success and a high salary is not the value. But your work is most important your achieve success.
+                        You can work according to your achieve success.</p>
                     </div>
                 </div>
 

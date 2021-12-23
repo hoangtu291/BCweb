@@ -1,3 +1,5 @@
+
+//danh sách banner
 var bannerList = [
     {
         "image": "https://images.vietnamworks.com/logo/VNW_prbanner_118514.jpg"
@@ -13,6 +15,8 @@ var bannerList = [
     }
 ];
 
+
+//danh sách job
 var listJob = {
     "job01": {
         "hotennguoidang": "BraveBits Vietnam",
@@ -113,6 +117,7 @@ var listJob = {
 
 }
 
+// danh sách hot job
 var listHotPost = {
     "job17": {
         "hotennguoidang": "Drviet tuyển dụng",

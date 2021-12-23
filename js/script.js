@@ -38,12 +38,14 @@ var scrollWindow = function () {
 };
 scrollWindow();
 
+
+
 function showAccountNav() {
     if (sessionStorage.account !== undefined) {
         $('#btn-signin').addClass('d-none');
         $('#nav-account').removeClass('d-none');
 
-        // gán dữ liệu trên session
+        // lấy dữ liệu trên session
         $('#nav-account .dropbtn a').html("Xin chào,&nbsp;&nbsp;&nbsp;" + JSON.parse(sessionStorage.account).name)
     }
 }
@@ -52,6 +54,7 @@ showAccountNav();
 function logOut() {
     var result = confirm("Bạn chắc chắn muốn đăng xuất");
     if (result) {
+        //xóa khỏi session
         sessionStorage.removeItem('account');
         window.location.href = "index.html";
     }
@@ -63,7 +66,7 @@ function checkRedirectCV() {
     if (sessionStorage.account === undefined) {
         var result = confirm("Bạn cần đăng nhập để thực hiện chức năng tạo CV");
         if (result) {
-            window.location.href = "yboxClone/dangnhap.html";
+            window.location.href = "dangnhap.html";
         }
     } else {
         window.location.href = "createCV.html";
@@ -82,12 +85,11 @@ function showBanner() {
     }
 
 }
-
 showBanner();
 
 // ----------------------------
 
-//load hot job
+//load và hiển thị hot job từ data
 function loadHotJob() {
     for (let i = 0; i < Object.keys(listHotPost).length; i++) {
         var index = i + Object.keys(listJob).length + 1;
@@ -161,6 +163,8 @@ window.addEventListener('scroll', () => {
     }, 2000);
 });
 
+
+//load và hiển thị danh sách job từ data
 function loadJob(id) {
     for (let i = 0; i < Object.keys(listJob).length; i++) {
         var index = (i + 1) < 10 ? "0" + (i + 1) : i + 1;
@@ -189,7 +193,6 @@ function loadJob(id) {
     }
 
     // hiển thị nút lưu bài viết
-
     $('.post-item').mouseenter(function () {
         $(this).children('.item-post-footer').addClass('icon-save-show');
 
@@ -208,7 +211,6 @@ function loadJob(id) {
     $('.post-item .item-post-header, .post-item .item-post-main, #customers-testimonials .post-item-hot .footer-post .btn-seeDetail').click(function () {
         window.location.href = `details.html?job=${this.parentElement.id}`;
     });
-
 }
 
 loadJob('listpost-section');
@@ -264,7 +266,7 @@ $('.post-item .item-post-header, .post-item .item-post-main, #customers-testimon
 
 // chuyển đến trang đăng nhập
 $('#btn-signin').click(function () {
-    window.location.href = "yboxClone/dangnhap.html";
+    window.location.href = "dangnhap.html";
 });
 
 // chuyển đến trang xem bài viết đã lưu
@@ -277,13 +279,15 @@ function hiddenModal(id) {
     $('#' + id).modal('hide');
 }
 
+
+//
 function showProfile() {
     if (sessionStorage.account !== undefined) {
         var profileName = JSON.parse(sessionStorage.account).name;
         var sex = JSON.parse(sessionStorage.account).gender;
         var profileEmail = JSON.parse(sessionStorage.account).email;
 
-        $('#profile-name').html(`${profileName}${sex == "Nam" ? `<i class="fas fa-mars ms-3"style="color: #4e88c5;"></i>` : `<i class="fas fa-venus ms-3" style="color: #f78888;"></i>`}`);
+        $('#profile-name').html(`${profileName}${sex == "Nam" ? `<i class="fas fa-mars ms-3"style="color: #4e88c5;"></i>` : sex == "Nữ" ? `<i class="fas fa-venus ms-3" style="color: #f78888;"></i>` : ""}`);
         $('#profile-birth').html(`<i class="fas fa-birthday-cake icon-yellow"></i>`);
         $('#profile-email').html(`<td><i class="fas fa-envelope icon-yellow"></i></td>
                                     <td>
@@ -305,14 +309,14 @@ function showProfile() {
 function saveProfile() {
 
     var profileName = $('#name').val();
-    var sex = $('input[name=\'sex\']:checked').val();
+    var sex = $('#profileModal select option:selected').val();
     var profileBirth = $('#birth').val();
     var profileDetail = $('#comment').val();
     var profileEmail = $('#email').val();
     var profilePhone = $('#phone').val();
     var profileAddress = $('#address').val();
 
-    $('#profile-name').html(`${profileName}${sex == "Nam" ? `<i class="fas fa-mars ms-3"style="color: #4e88c5;"></i>` : `<i class="fas fa-venus ms-3" style="color: #f78888;"></i>`}`);
+    $('#profile-name').html(`${profileName}${sex == "Nam" ? `<i class="fas fa-mars ms-3"style="color: #4e88c5;"></i>` : sex == "Nữ" ? `<i class="fas fa-venus ms-3" style="color: #f78888;"></i>` : ""}`);
     $('#profile-birth').html(`<i class="fas fa-birthday-cake icon-yellow"></i>${profileBirth}`);
     $('#profile-detail').html(profileDetail);
     $('#profile-email').html(`<td><i class="fas fa-envelope icon-yellow"></i></td>
@@ -442,7 +446,7 @@ function removeInfoElement(element) {
 }
 
 
-// LƯU BÀI VIẾT
+// lưu bài viết, hiển thị thông báo lưu thành công hoặc thất bại
 function savePost(code) {
     var message = "Lưu bài viết thành công";
     var alert = "alert-success"
@@ -457,7 +461,8 @@ function savePost(code) {
     else {
         localStorage.setItem(code, JSON.stringify(listHotPost[code]));
     }
-
+    
+    //hiển thị thông báo
     $('#alert').addClass(alert).removeClass('d-none');
 
     $('#alert').html(message);
@@ -514,16 +519,16 @@ window.onstorage = () => {
 function showDetails() {
     var code = new URLSearchParams(window.location.search).get("job");
 
-    if (listJob[code] !== undefined){
-        $('.avt-cty .name-cty').html("&nbsp;"+listJob[code].hotennguoidang);
+    if (listJob[code] !== undefined) {
+        $('.avt-cty .name-cty').html("&nbsp;" + listJob[code].hotennguoidang);
         $('#logo-cty').attr('src', listJob[code].logo);
         $('.title-td h1').html(listJob[code].title);
         $('.main-gthieu-cty .gt-cty img').attr('src', listJob[code].logo);
         $('#hanchot').html(`<b>Hạn cuối:</b> 23:59 ngày ${listJob[code].hanchot}`);
         $('#salary').html("Thỏa thuận");
     }
-    else{
-        $('.avt-cty .name-cty').html("&nbsp;"+listHotPost[code].hotennguoidang);
+    else {
+        $('.avt-cty .name-cty').html("&nbsp;" + listHotPost[code].hotennguoidang);
         $('#logo-cty').attr('src', listHotPost[code].logo);
         $('.title-td h1').html(listHotPost[code].title);
         $('.main-gthieu-cty .gt-cty img').attr('src', listHotPost[code].logo);
@@ -536,5 +541,9 @@ function showDetails() {
     }
 }
 
+function redirectNone() {
+    window.location.href = "none.html";
+}
+
 // LOADED
-setTimeout(function () { $('body').addClass('loaded'); }, 300);
+setTimeout(function () { $('body').addClass('loaded'); }, 1500);
